@@ -1,0 +1,795 @@
+round_id,round_date,course_name,hole_number,par,hole_yards,hole_handicap,shot_number,club,shot_type,start_lie,start_dist_yards,end_lie,end_dist_yards,penalty
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,1,4,0,9,1,Jo,TEE,tee,277.9,rough,233.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,1,4,0,9,2,894935293,APPROACH,rough,233.8,rough,62.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,1,4,0,9,3,56 Degree,APPROACH,rough,62.1,green,4.7,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,1,4,0,9,4,Simmo the Savage,PUTT,green,4.7,green,2.5,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,1,4,0,9,5,Simmo the Savage,PUTT,green,2.5,green,12.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,2,4,0,7,1,Jo,TEE,tee,312.1,rough,230.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,2,4,0,7,2,894935293,APPROACH,rough,230.1,rough,144.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,2,4,0,7,3,894935296,APPROACH,rough,144.8,rough,26.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,2,4,0,7,4,56 Degree,CHIP,rough,26.4,green,11.7,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,2,4,0,7,5,Simmo the Savage,PUTT,green,11.7,green,6.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,2,4,0,7,6,Simmo the Savage,PUTT,green,6.1,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,3,3,0,17,1,894935297,APPROACH,tee,131.6,fairway,32.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,3,3,0,17,2,56 Degree,CHIP,fairway,32.6,sand,18.3,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,3,3,0,17,3,56 Degree,CHIP,sand,18.3,green,11.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,3,3,0,17,4,Simmo the Savage,PUTT,green,11.4,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,4,5,0,1,1,Jo,TEE,tee,550.0,fairway,248.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,4,5,0,1,2,Big Bertha,APPROACH,fairway,248.8,rough,134.2,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,4,5,0,1,3,894935297,APPROACH,rough,134.2,green,17.5,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,4,5,0,1,4,Simmo the Savage,PUTT,green,17.5,green,9.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,4,5,0,1,5,Simmo the Savage,PUTT,green,9.1,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,5,3,0,15,1,894935296,APPROACH,tee,127.1,rough,44.7,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,5,3,0,15,2,56 Degree,CHIP,rough,44.7,rough,29.7,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,5,3,0,15,3,56 Degree,CHIP,rough,29.0,green,7.1,2
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,5,3,0,15,4,Simmo the Savage,PUTT,green,7.1,green,7.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,5,3,0,15,5,Simmo the Savage,PUTT,green,7.6,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,6,5,0,3,1,Jo,TEE,tee,498.4,rough,293.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,6,5,0,3,2,894935293,UNKNOWN,rough,293.4,fairway,92.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,6,5,0,3,3,52 Degree,APPROACH,fairway,92.6,green,7.2,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,6,5,0,3,4,Simmo the Savage,PUTT,green,7.2,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,7,4,0,11,1,Jo,TEE,tee,319.0,rough,62.2,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,7,4,0,11,2,56 Degree,CHIP,rough,62.2,rough,67.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,7,4,0,11,3,56 Degree,APPROACH,rough,67.9,rough,17.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,7,4,0,11,4,56 Degree,CHIP,rough,17.9,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,8,4,0,5,1,Jo,TEE,tee,373.6,rough,114.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,8,4,0,5,2,52 Degree,APPROACH,rough,114.8,rough,58.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,8,4,0,5,3,56 Degree,CHIP,rough,58.4,rough,18.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,8,4,0,5,4,Approach Wedge,CHIP,rough,18.9,green,16.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,8,4,0,5,5,Simmo the Savage,PUTT,green,16.1,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,9,4,0,13,1,Jo,TEE,tee,274.0,rough,63.5,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,9,4,0,13,2,Approach Wedge,RECOVERY,rough,63.5,rough,141.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,9,4,0,13,3,894935295,APPROACH,rough,141.0,fairway,61.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,9,4,0,13,4,894935298,APPROACH,fairway,61.9,green,19.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,9,4,0,13,5,Simmo the Savage,PUTT,green,19.6,green,6.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,9,4,0,13,6,Simmo the Savage,PUTT,green,6.4,green,5.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,9,4,0,13,7,Simmo the Savage,PUTT,green,5.8,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,10,4,0,12,1,Jo,TEE,tee,281.0,rough,101.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,10,4,0,12,2,Approach Wedge,APPROACH,rough,101.1,rough,43.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,10,4,0,12,3,56 Degree,CHIP,rough,43.9,green,19.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,10,4,0,12,4,Simmo the Savage,PUTT,green,19.0,green,9.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,10,4,0,12,5,Simmo the Savage,PUTT,green,9.8,green,5.5,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,10,4,0,12,6,Simmo the Savage,PUTT,green,5.5,green,4.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,10,4,0,12,7,Simmo the Savage,PUTT,green,4.4,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,11,3,0,16,1,894935294,APPROACH,tee,179.5,rough,78.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,11,3,0,16,2,56 Degree,APPROACH,rough,78.4,green,14.7,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,11,3,0,16,3,Simmo the Savage,PUTT,green,14.7,green,14.7,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,11,3,0,16,4,Simmo the Savage,PUTT,green,14.7,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,1,Jo,TEE,tee,334.7,rough,216.2,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,2,894935293,APPROACH,rough,216.2,rough,39.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,3,56 Degree,CHIP,rough,40.0,rough,31.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,4,56 Degree,CHIP,rough,31.1,green,17.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,5,Simmo the Savage,PUTT,green,17.8,green,19.2,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,6,Simmo the Savage,PUTT,green,19.2,green,8.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,7,Simmo the Savage,PUTT,green,8.8,green,15.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,12,4,0,10,8,Simmo the Savage,PUTT,green,15.0,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,13,4,0,4,1,Jo,TEE,tee,374.9,rough,54.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,13,4,0,4,2,894935297,CHIP,rough,54.0,rough,27.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,13,4,0,4,3,56 Degree,CHIP,rough,27.1,green,11.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,13,4,0,4,4,Simmo the Savage,PUTT,green,11.0,green,7.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,13,4,0,4,5,Simmo the Savage,PUTT,green,7.0,green,8.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,13,4,0,4,6,Simmo the Savage,PUTT,green,8.0,green,10.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,13,4,0,4,7,Simmo the Savage,PUTT,green,10.4,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,14,4,0,14,1,Jo,APPROACH,tee,265.4,rough,142.5,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,14,4,0,14,2,894935297,APPROACH,rough,142.5,green,8.9,1
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,14,4,0,14,3,Simmo the Savage,PUTT,green,8.9,green,3.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,14,4,0,14,4,Simmo the Savage,PUTT,green,3.6,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,15,4,0,2,1,Jo,TEE,tee,442.0,rough,189.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,15,4,0,2,2,894935294,RECOVERY,rough,189.9,rough,160.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,15,4,0,2,3,894935294,APPROACH,rough,160.0,fairway,62.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,15,4,0,2,4,56 Degree,CHIP,fairway,62.0,green,10.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,15,4,0,2,5,Simmo the Savage,PUTT,green,10.4,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,16,5,0,6,1,Jo,TEE,tee,484.0,rough,276.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,16,5,0,6,2,Big Bertha,APPROACH,rough,276.6,rough,80.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,16,5,0,6,3,894935297,APPROACH,rough,80.6,rough,13.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,16,5,0,6,4,56 Degree,CHIP,rough,13.6,green,11.4,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,16,5,0,6,5,Simmo the Savage,PUTT,green,11.4,green,6.2,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,16,5,0,6,6,Simmo the Savage,PUTT,green,6.2,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,17,3,0,8,1,894935293,APPROACH,tee,200.9,rough,73.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,17,3,0,8,2,894935297,APPROACH,rough,73.9,green,12.9,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,17,3,0,8,3,Simmo the Savage,PUTT,green,12.9,green,8.5,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,17,3,0,8,4,Simmo the Savage,PUTT,green,8.5,green,10.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,17,3,0,8,5,Simmo the Savage,PUTT,green,10.0,green,7.8,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,17,3,0,8,6,Simmo the Savage,PUTT,green,7.8,hole,0.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,18,4,0,18,1,Jo,TEE,tee,318.2,rough,146.6,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,18,4,0,18,2,894935293,APPROACH,rough,146.6,rough,58.0,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,18,4,0,18,3,Approach Wedge,CHIP,rough,58.0,green,2.3,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,18,4,0,18,4,Simmo the Savage,PUTT,green,2.3,green,15.1,0
+22574661074,2026-04-18,Apple Greens Golf Course ~ One & Two,18,4,0,18,5,Simmo the Savage,PUTT,green,15.1,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,1,4,0,11,1,Jo,TEE,tee,323.0,rough,132.5,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,1,4,0,11,2,894935297,APPROACH,rough,132.5,sand,24.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,1,4,0,11,3,56 Degree,CHIP,sand,24.0,green,6.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,1,4,0,11,4,Simmo the Savage,PUTT,green,6.8,green,10.1,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,1,4,0,11,5,Simmo the Savage,PUTT,green,10.1,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,2,5,0,1,1,Jo,TEE,tee,482.1,rough,170.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,2,5,0,1,2,894935293,APPROACH,rough,170.7,rough,29.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,2,5,0,1,3,56 Degree,CHIP,rough,29.6,green,13.1,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,2,5,0,1,4,Simmo the Savage,PUTT,green,13.1,green,3.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,2,5,0,1,5,Simmo the Savage,PUTT,green,3.8,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,3,3,0,17,1,894935295,APPROACH,tee,151.4,rough,65.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,3,3,0,17,2,56 Degree,APPROACH,rough,65.8,sand,16.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,3,3,0,17,3,52 Degree,CHIP,sand,16.6,green,6.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,3,3,0,17,4,Simmo the Savage,PUTT,green,6.0,green,8.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,3,3,0,17,5,Simmo the Savage,PUTT,green,8.0,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,4,4,0,5,1,Jo,TEE,tee,370.4,rough,251.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,4,4,0,5,2,894935293,APPROACH,rough,251.4,rough,191.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,4,4,0,5,3,894935293,APPROACH,rough,191.0,rough,26.9,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,4,4,0,5,4,56 Degree,CHIP,rough,26.9,rough,17.5,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,4,4,0,5,5,56 Degree,CHIP,rough,17.5,green,4.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,4,4,0,5,6,Simmo the Savage,PUTT,green,4.7,green,8.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,4,4,0,5,7,Simmo the Savage,PUTT,green,8.4,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,5,4,0,9,1,Jo,TEE,tee,336.2,rough,116.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,5,4,0,9,2,894935298,APPROACH,rough,116.4,fairway,57.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,5,4,0,9,3,56 Degree,CHIP,fairway,57.7,green,8.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,5,4,0,9,4,Simmo the Savage,PUTT,green,8.2,green,10.9,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,5,4,0,9,5,Simmo the Savage,PUTT,green,10.9,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,6,4,0,13,1,Jo,APPROACH,tee,274.8,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,7,3,0,3,1,56 Degree,RECOVERY,rough,140.2,tee,199.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,7,3,0,3,2,894935293,APPROACH,tee,199.6,fairway,15.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,7,3,0,3,3,56 Degree,CHIP,fairway,15.8,green,6.9,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,7,3,0,3,4,Simmo the Savage,PUTT,green,6.9,green,7.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,7,3,0,3,5,Simmo the Savage,PUTT,green,7.6,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,8,4,0,15,1,Jo,TEE,tee,301.1,rough,24.5,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,8,4,0,15,2,56 Degree,CHIP,rough,24.5,green,3.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,8,4,0,15,3,Simmo the Savage,PUTT,green,3.2,green,8.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,8,4,0,15,4,Simmo the Savage,PUTT,green,8.4,green,6.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,8,4,0,15,5,Simmo the Savage,PUTT,green,6.2,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,9,4,0,7,1,Jo,TEE,tee,354.8,fairway,49.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,9,4,0,7,2,56 Degree,CHIP,fairway,49.2,green,12.3,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,9,4,0,7,3,Simmo the Savage,PUTT,green,12.3,green,8.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,9,4,0,7,4,Simmo the Savage,PUTT,green,8.2,green,10.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,9,4,0,7,5,Simmo the Savage,PUTT,green,10.7,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,1,Jo,TEE,tee,497.7,rough,392.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,2,894935293,RECOVERY,rough,392.7,rough,372.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,3,894935293,RECOVERY,rough,372.4,rough,219.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,4,894935293,APPROACH,rough,219.0,rough,35.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,5,56 Degree,CHIP,rough,35.2,rough,20.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,6,56 Degree,CHIP,rough,20.2,green,12.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,7,Simmo the Savage,PUTT,green,12.6,green,7.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,8,Simmo the Savage,PUTT,green,7.7,green,7.9,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,10,5,0,6,9,Simmo the Savage,PUTT,green,7.9,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,11,3,0,18,1,894935296,APPROACH,tee,145.4,rough,15.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,11,3,0,18,2,56 Degree,CHIP,rough,15.0,green,0.3,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,11,3,0,18,3,Simmo the Savage,PUTT,green,0.3,green,3.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,11,3,0,18,4,Simmo the Savage,PUTT,green,3.8,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,12,5,0,2,1,Jo,TEE,tee,534.2,rough,272.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,12,5,0,2,2,894935293,APPROACH,rough,272.0,rough,132.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,12,5,0,2,3,894935298,APPROACH,rough,132.6,fairway,55.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,12,5,0,2,4,56 Degree,CHIP,fairway,55.8,rough,23.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,12,5,0,2,5,56 Degree,CHIP,rough,23.4,green,8.5,1
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,12,5,0,2,6,Simmo the Savage,PUTT,green,8.5,green,6.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,12,5,0,2,7,Simmo the Savage,PUTT,green,6.8,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,13,3,0,12,1,894935295,TEE,tee,173.6,rough,57.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,13,3,0,12,2,56 Degree,CHIP,rough,57.6,green,7.6,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,13,3,0,12,3,Simmo the Savage,PUTT,green,7.6,green,5.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,13,3,0,12,4,Simmo the Savage,PUTT,green,5.0,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,14,4,0,4,1,Jo,TEE,tee,334.4,rough,46.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,14,4,0,4,2,56 Degree,CHIP,rough,46.0,rough,31.8,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,14,4,0,4,3,56 Degree,CHIP,rough,31.8,green,6.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,14,4,0,4,4,Simmo the Savage,PUTT,green,6.2,green,4.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,14,4,0,4,5,Simmo the Savage,PUTT,green,4.0,green,14.1,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,14,4,0,4,6,Simmo the Savage,PUTT,green,14.1,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,15,4,0,14,1,Jo,APPROACH,tee,233.4,rough,81.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,15,4,0,14,2,52 Degree,APPROACH,rough,81.7,fairway,20.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,15,4,0,14,3,56 Degree,CHIP,fairway,20.4,green,8.0,1
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,15,4,0,14,4,Simmo the Savage,PUTT,green,8.0,green,9.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,15,4,0,14,5,Simmo the Savage,PUTT,green,9.4,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,16,4,0,16,1,Jo,TEE,tee,271.0,rough,104.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,16,4,0,16,2,894935294,RECOVERY,rough,104.4,rough,98.9,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,16,4,0,16,3,52 Degree,RECOVERY,rough,98.9,fairway,55.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,16,4,0,16,4,56 Degree,CHIP,fairway,55.2,green,4.9,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,16,4,0,16,5,Simmo the Savage,PUTT,green,4.9,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,17,3,0,8,1,894935295,APPROACH,tee,131.3,rough,27.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,17,3,0,8,2,56 Degree,CHIP,rough,27.0,green,1.2,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,17,3,0,8,3,Simmo the Savage,PUTT,green,1.2,green,9.3,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,17,3,0,8,4,Simmo the Savage,PUTT,green,9.3,hole,0.0,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,18,4,0,10,1,Jo,TEE,tee,302.0,rough,49.5,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,18,4,0,10,2,56 Degree,UNKNOWN,rough,49.5,rough,23.7,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,18,4,0,10,3,56 Degree,CHIP,rough,23.7,rough,15.4,0
+22537517344,2026-04-15,Van Cortlandt Park Golf Course,18,4,0,10,4,Simmo the Savage,CHIP,rough,15.4,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,1,4,0,1,1,Jo,TEE,tee,416.5,fairway,192.4,0
+22480357094,2026-04-10,Mosholu Golf Course,1,4,0,1,2,894935293,APPROACH,fairway,192.4,rough,54.5,0
+22480357094,2026-04-10,Mosholu Golf Course,1,4,0,1,3,56 Degree,CHIP,rough,54.5,green,11.3,1
+22480357094,2026-04-10,Mosholu Golf Course,1,4,0,1,4,Simmo the Savage,PUTT,green,11.3,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,2,3,0,9,1,Approach Wedge,APPROACH,tee,92.2,rough,14.4,0
+22480357094,2026-04-10,Mosholu Golf Course,2,3,0,9,2,56 Degree,CHIP,rough,14.4,green,4.4,0
+22480357094,2026-04-10,Mosholu Golf Course,2,3,0,9,3,Simmo the Savage,PUTT,green,4.4,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,3,3,0,7,1,894935295,APPROACH,tee,152.7,rough,57.8,0
+22480357094,2026-04-10,Mosholu Golf Course,3,3,0,7,2,52 Degree,APPROACH,rough,57.8,rough,22.4,0
+22480357094,2026-04-10,Mosholu Golf Course,3,3,0,7,3,56 Degree,CHIP,rough,22.4,rough,20.8,0
+22480357094,2026-04-10,Mosholu Golf Course,3,3,0,7,4,56 Degree,CHIP,rough,20.8,green,8.6,0
+22480357094,2026-04-10,Mosholu Golf Course,3,3,0,7,5,Simmo the Savage,PUTT,green,8.6,green,6.0,0
+22480357094,2026-04-10,Mosholu Golf Course,3,3,0,7,6,Simmo the Savage,PUTT,green,6.0,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,4,4,0,3,1,Jo,APPROACH,tee,293.1,rough,178.0,0
+22480357094,2026-04-10,Mosholu Golf Course,4,4,0,3,2,894935294,APPROACH,rough,178.0,rough,42.1,0
+22480357094,2026-04-10,Mosholu Golf Course,4,4,0,3,3,56 Degree,CHIP,rough,42.1,green,15.2,0
+22480357094,2026-04-10,Mosholu Golf Course,4,4,0,3,4,56 Degree,UNKNOWN,green,15.2,green,9.5,0
+22480357094,2026-04-10,Mosholu Golf Course,4,4,0,3,5,Simmo the Savage,PUTT,green,9.5,green,12.1,0
+22480357094,2026-04-10,Mosholu Golf Course,4,4,0,3,6,Simmo the Savage,PUTT,green,12.1,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,5,3,0,8,1,894935298,APPROACH,tee,126.3,green,5.0,0
+22480357094,2026-04-10,Mosholu Golf Course,5,3,0,8,2,Simmo the Savage,PUTT,green,5.0,green,8.4,0
+22480357094,2026-04-10,Mosholu Golf Course,5,3,0,8,3,Simmo the Savage,PUTT,green,8.4,green,6.5,0
+22480357094,2026-04-10,Mosholu Golf Course,5,3,0,8,4,Simmo the Savage,PUTT,green,6.5,green,6.8,0
+22480357094,2026-04-10,Mosholu Golf Course,5,3,0,8,5,Simmo the Savage,PUTT,green,6.8,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,1,Jo,TEE,tee,399.6,fairway,82.6,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,2,52 Degree,APPROACH,fairway,82.6,rough,18.4,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,3,56 Degree,CHIP,rough,18.4,green,4.7,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,4,Simmo the Savage,PUTT,green,4.7,green,3.9,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,5,Simmo the Savage,PUTT,green,3.9,green,5.7,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,6,Simmo the Savage,PUTT,green,5.7,green,3.6,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,7,Simmo the Savage,PUTT,green,3.6,green,4.2,0
+22480357094,2026-04-10,Mosholu Golf Course,6,4,0,2,8,Simmo the Savage,PUTT,green,4.2,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,7,4,0,6,1,Jo,TEE,tee,299.1,rough,44.6,0
+22480357094,2026-04-10,Mosholu Golf Course,7,4,0,6,2,56 Degree,CHIP,rough,44.6,rough,25.0,0
+22480357094,2026-04-10,Mosholu Golf Course,7,4,0,6,3,Simmo the Savage,CHIP,rough,25.0,green,6.9,0
+22480357094,2026-04-10,Mosholu Golf Course,7,4,0,6,4,Simmo the Savage,PUTT,green,6.9,green,6.4,0
+22480357094,2026-04-10,Mosholu Golf Course,7,4,0,6,5,Simmo the Savage,PUTT,green,6.4,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,8,4,0,5,1,894935293,APPROACH,rough,258.5,rough,19.7,0
+22480357094,2026-04-10,Mosholu Golf Course,8,4,0,5,2,56 Degree,CHIP,rough,19.7,green,5.2,0
+22480357094,2026-04-10,Mosholu Golf Course,8,4,0,5,3,Simmo the Savage,PUTT,green,5.2,green,4.8,0
+22480357094,2026-04-10,Mosholu Golf Course,8,4,0,5,4,Simmo the Savage,PUTT,green,4.8,green,10.3,0
+22480357094,2026-04-10,Mosholu Golf Course,8,4,0,5,5,Simmo the Savage,PUTT,green,10.3,green,9.8,0
+22480357094,2026-04-10,Mosholu Golf Course,8,4,0,5,6,Simmo the Savage,PUTT,green,9.8,green,8.3,0
+22480357094,2026-04-10,Mosholu Golf Course,8,4,0,5,7,Simmo the Savage,PUTT,green,8.3,hole,0.0,0
+22480357094,2026-04-10,Mosholu Golf Course,9,3,0,4,1,894935297,APPROACH,tee,125.2,green,18.5,0
+22480357094,2026-04-10,Mosholu Golf Course,9,3,0,4,2,Simmo the Savage,PUTT,green,18.5,green,5.7,0
+22480357094,2026-04-10,Mosholu Golf Course,9,3,0,4,3,Simmo the Savage,PUTT,green,5.7,green,19.2,0
+22480357094,2026-04-10,Mosholu Golf Course,9,3,0,4,4,Simmo the Savage,PUTT,green,19.2,green,15.8,0
+22480357094,2026-04-10,Mosholu Golf Course,9,3,0,4,5,Simmo the Savage,PUTT,green,15.8,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,1,4,0,1,1,Jo,TEE,tee,410.7,rough,274.2,0
+22349978898,2026-03-30,Mosholu Golf Course,1,4,0,1,2,894935297,RECOVERY,rough,274.2,rough,150.9,0
+22349978898,2026-03-30,Mosholu Golf Course,1,4,0,1,3,894935297,UNKNOWN,rough,150.9,rough,92.5,0
+22349978898,2026-03-30,Mosholu Golf Course,1,4,0,1,4,56 Degree,APPROACH,rough,92.5,rough,20.0,0
+22349978898,2026-03-30,Mosholu Golf Course,1,4,0,1,5,Simmo the Savage,CHIP,rough,20.0,green,10.5,1
+22349978898,2026-03-30,Mosholu Golf Course,1,4,0,1,6,Simmo the Savage,PUTT,green,10.5,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,2,3,0,9,1,Approach Wedge,APPROACH,tee,93.0,rough,37.3,0
+22349978898,2026-03-30,Mosholu Golf Course,2,3,0,9,2,56 Degree,CHIP,rough,37.3,green,8.8,0
+22349978898,2026-03-30,Mosholu Golf Course,2,3,0,9,3,Simmo the Savage,PUTT,green,8.8,green,14.9,0
+22349978898,2026-03-30,Mosholu Golf Course,2,3,0,9,4,Simmo the Savage,PUTT,green,14.9,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,3,3,0,7,1,894935296,APPROACH,tee,157.0,rough,53.7,0
+22349978898,2026-03-30,Mosholu Golf Course,3,3,0,7,2,56 Degree,UNKNOWN,rough,53.7,green,14.2,0
+22349978898,2026-03-30,Mosholu Golf Course,3,3,0,7,3,Simmo the Savage,PUTT,green,14.2,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,4,4,0,3,1,Jo,APPROACH,tee,271.0,green,7.2,0
+22349978898,2026-03-30,Mosholu Golf Course,4,4,0,3,2,Simmo the Savage,PUTT,green,7.2,green,7.5,0
+22349978898,2026-03-30,Mosholu Golf Course,4,4,0,3,3,Simmo the Savage,PUTT,green,7.5,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,5,3,0,8,1,894935296,APPROACH,tee,122.0,rough,23.5,0
+22349978898,2026-03-30,Mosholu Golf Course,5,3,0,8,2,Approach Wedge,CHIP,rough,23.5,green,6.1,0
+22349978898,2026-03-30,Mosholu Golf Course,5,3,0,8,3,Simmo the Savage,PUTT,green,6.1,green,19.3,0
+22349978898,2026-03-30,Mosholu Golf Course,5,3,0,8,4,Simmo the Savage,PUTT,green,19.3,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,6,4,0,2,1,Jo,TEE,tee,394.9,rough,131.2,0
+22349978898,2026-03-30,Mosholu Golf Course,6,4,0,2,2,894935298,APPROACH,rough,131.2,rough,20.4,0
+22349978898,2026-03-30,Mosholu Golf Course,6,4,0,2,3,56 Degree,CHIP,rough,20.4,rough,22.6,0
+22349978898,2026-03-30,Mosholu Golf Course,6,4,0,2,4,56 Degree,CHIP,rough,22.6,green,7.9,1
+22349978898,2026-03-30,Mosholu Golf Course,6,4,0,2,5,Simmo the Savage,PUTT,green,7.9,green,8.5,0
+22349978898,2026-03-30,Mosholu Golf Course,6,4,0,2,6,Simmo the Savage,PUTT,green,8.5,green,9.9,0
+22349978898,2026-03-30,Mosholu Golf Course,6,4,0,2,7,Simmo the Savage,PUTT,green,9.9,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,7,4,0,6,1,Jo,APPROACH,tee,291.8,rough,137.1,0
+22349978898,2026-03-30,Mosholu Golf Course,7,4,0,6,2,894935297,APPROACH,rough,137.1,green,10.9,0
+22349978898,2026-03-30,Mosholu Golf Course,7,4,0,6,3,Simmo the Savage,PUTT,green,10.9,green,4.1,0
+22349978898,2026-03-30,Mosholu Golf Course,7,4,0,6,4,Simmo the Savage,PUTT,green,4.1,green,6.0,0
+22349978898,2026-03-30,Mosholu Golf Course,7,4,0,6,5,Simmo the Savage,PUTT,green,6.0,green,6.0,0
+22349978898,2026-03-30,Mosholu Golf Course,7,4,0,6,6,Simmo the Savage,PUTT,green,6.0,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,8,4,0,5,1,Jo,APPROACH,rough,252.6,rough,82.3,0
+22349978898,2026-03-30,Mosholu Golf Course,8,4,0,5,2,894935298,APPROACH,rough,82.3,rough,53.9,0
+22349978898,2026-03-30,Mosholu Golf Course,8,4,0,5,3,56 Degree,CHIP,rough,53.9,rough,23.0,0
+22349978898,2026-03-30,Mosholu Golf Course,8,4,0,5,4,56 Degree,CHIP,rough,23.0,green,5.3,0
+22349978898,2026-03-30,Mosholu Golf Course,8,4,0,5,5,Simmo the Savage,PUTT,green,5.3,green,7.4,0
+22349978898,2026-03-30,Mosholu Golf Course,8,4,0,5,6,Simmo the Savage,PUTT,green,7.4,hole,0.0,0
+22349978898,2026-03-30,Mosholu Golf Course,9,3,0,4,1,894935295,APPROACH,tee,126.5,rough,46.1,0
+22349978898,2026-03-30,Mosholu Golf Course,9,3,0,4,2,56 Degree,UNKNOWN,rough,46.1,rough,13.2,0
+22349978898,2026-03-30,Mosholu Golf Course,9,3,0,4,3,56 Degree,CHIP,rough,13.2,green,10.7,0
+22349978898,2026-03-30,Mosholu Golf Course,9,3,0,4,4,Simmo the Savage,PUTT,green,10.7,green,19.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,1,4,0,11,1,Big Bertha,TEE,tee,362.1,rough,134.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,1,4,0,11,2,894935297,APPROACH,rough,134.7,fairway,22.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,1,4,0,11,3,56 Degree,CHIP,fairway,22.7,green,11.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,1,4,0,11,4,Simmo the Savage,PUTT,green,11.9,green,3.5,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,1,4,0,11,5,Simmo the Savage,PUTT,green,3.5,green,10.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,1,4,0,11,6,Simmo the Savage,PUTT,green,10.0,green,7.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,1,4,0,11,7,Simmo the Savage,PUTT,green,7.2,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,1,Big Bertha,TEE,tee,644.5,rough,498.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,2,Big Bertha,LAYUP,rough,498.9,rough,375.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,3,Big Bertha,UNKNOWN,rough,375.6,rough,276.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,4,894935295,RECOVERY,rough,276.7,fairway,218.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,5,894935293,UNKNOWN,fairway,218.9,rough,20.3,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,6,56 Degree,CHIP,rough,20.3,green,5.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,7,Simmo the Savage,PUTT,green,5.2,green,9.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,8,Simmo the Savage,PUTT,green,9.2,green,4.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,2,5,0,1,9,Simmo the Savage,PUTT,green,4.7,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,3,3,0,17,1,894935294,APPROACH,tee,174.3,rough,27.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,3,3,0,17,2,56 Degree,CHIP,rough,27.0,rough,28.8,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,3,3,0,17,3,56 Degree,CHIP,rough,28.8,rough,26.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,3,3,0,17,4,Simmo the Savage,CHIP,rough,26.1,rough,16.4,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,3,3,0,17,5,Simmo the Savage,UNKNOWN,rough,16.4,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,4,4,0,5,1,Big Bertha,TEE,tee,410.2,rough,188.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,4,4,0,5,2,Big Bertha,APPROACH,rough,188.1,rough,61.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,4,4,0,5,3,56 Degree,CHIP,rough,61.2,rough,34.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,4,4,0,5,4,56 Degree,CHIP,rough,34.0,green,13.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,4,4,0,5,5,Simmo the Savage,PUTT,green,13.6,green,12.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,4,4,0,5,6,Simmo the Savage,PUTT,green,12.1,green,7.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,4,4,0,5,7,Simmo the Savage,PUTT,green,7.6,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,5,4,0,9,1,Big Bertha,TEE,tee,383.8,rough,167.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,5,4,0,9,2,894935294,APPROACH,rough,167.6,fairway,34.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,5,4,0,9,3,56 Degree,CHIP,fairway,34.2,rough,19.5,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,5,4,0,9,4,56 Degree,CHIP,rough,19.5,fairway,17.8,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,5,4,0,9,5,Simmo the Savage,CHIP,fairway,17.8,green,2.5,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,5,4,0,9,6,Simmo the Savage,PUTT,green,2.5,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,6,4,0,13,1,Big Bertha,TEE,tee,302.7,fairway,136.3,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,6,4,0,13,2,894935293,APPROACH,fairway,136.3,rough,107.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,6,4,0,13,3,894935293,RECOVERY,rough,107.7,green,10.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,6,4,0,13,4,Simmo the Savage,PUTT,green,10.2,green,7.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,6,4,0,13,5,Simmo the Savage,PUTT,green,7.2,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,7,3,0,3,1,Big Bertha,APPROACH,tee,209.6,rough,125.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,7,3,0,3,2,894935297,APPROACH,rough,125.1,green,13.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,7,3,0,3,3,Simmo the Savage,PUTT,green,13.6,green,11.8,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,7,3,0,3,4,Simmo the Savage,PUTT,green,11.8,green,8.4,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,7,3,0,3,5,Simmo the Savage,PUTT,green,8.4,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,8,4,0,15,1,Big Bertha,TEE,tee,349.1,fairway,76.8,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,8,4,0,15,2,56 Degree,APPROACH,fairway,76.8,fairway,36.3,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,8,4,0,15,3,56 Degree,CHIP,fairway,36.3,fairway,17.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,8,4,0,15,4,56 Degree,CHIP,fairway,17.7,green,9.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,8,4,0,15,5,Simmo the Savage,PUTT,green,9.9,green,2.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,8,4,0,15,6,Simmo the Savage,PUTT,green,2.2,green,5.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,8,4,0,15,7,Simmo the Savage,PUTT,green,5.0,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,9,4,0,7,1,Big Bertha,TEE,tee,437.8,rough,244.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,9,4,0,7,2,Big Bertha,APPROACH,rough,244.9,rough,64.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,9,4,0,7,3,56 Degree,APPROACH,rough,64.2,rough,18.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,9,4,0,7,4,56 Degree,CHIP,rough,18.6,green,12.1,1
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,9,4,0,7,5,Simmo the Savage,PUTT,green,12.1,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,10,5,0,6,1,Big Bertha,TEE,tee,532.6,fairway,284.3,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,10,5,0,6,2,Big Bertha,APPROACH,fairway,284.3,fairway,154.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,10,5,0,6,3,894935294,APPROACH,fairway,154.0,rough,40.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,10,5,0,6,4,56 Degree,CHIP,rough,40.9,green,2.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,10,5,0,6,5,Simmo the Savage,PUTT,green,2.7,green,5.8,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,10,5,0,6,6,Simmo the Savage,PUTT,green,5.8,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,11,3,0,18,1,894935294,APPROACH,tee,165.5,rough,26.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,11,3,0,18,2,56 Degree,CHIP,rough,26.7,green,9.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,11,3,0,18,3,Simmo the Savage,PUTT,green,9.1,green,10.8,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,11,3,0,18,4,Simmo the Savage,PUTT,green,10.8,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,12,5,0,2,1,Big Bertha,TEE,tee,658.0,rough,408.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,12,5,0,2,2,Big Bertha,RECOVERY,rough,408.9,rough,116.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,12,5,0,2,3,894935297,RECOVERY,rough,116.0,fairway,90.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,12,5,0,2,4,56 Degree,APPROACH,fairway,90.7,rough,18.4,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,12,5,0,2,5,56 Degree,CHIP,rough,18.4,fairway,18.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,12,5,0,2,6,Simmo the Savage,CHIP,fairway,18.9,green,1.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,12,5,0,2,7,Simmo the Savage,PUTT,green,1.7,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,13,3,0,12,1,894935293,APPROACH,tee,183.5,rough,27.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,13,3,0,12,2,56 Degree,CHIP,rough,27.7,rough,18.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,13,3,0,12,3,56 Degree,CHIP,rough,18.1,green,7.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,13,3,0,12,4,Simmo the Savage,PUTT,green,7.2,green,5.3,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,13,3,0,12,5,Simmo the Savage,PUTT,green,5.3,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,14,4,0,4,1,Big Bertha,TEE,tee,408.7,rough,245.8,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,14,4,0,4,2,Big Bertha,APPROACH,rough,245.8,fairway,146.7,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,14,4,0,4,3,894935294,APPROACH,fairway,146.7,fairway,74.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,14,4,0,4,4,56 Degree,APPROACH,fairway,74.9,rough,25.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,14,4,0,4,5,56 Degree,CHIP,rough,25.6,rough,10.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,14,4,0,4,6,Simmo the Savage,CHIP,rough,10.6,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,15,4,0,14,1,Big Bertha,APPROACH,tee,285.7,rough,138.6,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,15,4,0,14,2,894935297,APPROACH,rough,138.6,rough,109.4,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,15,4,0,14,3,894935297,APPROACH,rough,109.4,rough,70.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,15,4,0,14,4,56 Degree,APPROACH,rough,70.9,green,6.2,1
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,15,4,0,14,5,Simmo the Savage,PUTT,green,6.2,green,6.5,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,15,4,0,14,6,Simmo the Savage,PUTT,green,6.5,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,16,4,0,16,1,Big Bertha,TEE,tee,278.6,fairway,60.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,16,4,0,16,2,56 Degree,APPROACH,fairway,60.9,fairway,25.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,16,4,0,16,3,56 Degree,CHIP,fairway,25.1,green,6.5,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,16,4,0,16,4,Simmo the Savage,PUTT,green,6.5,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,17,3,0,8,1,894935293,APPROACH,tee,183.9,tee,125.3,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,17,3,0,8,2,894935296,APPROACH,tee,125.3,rough,45.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,17,3,0,8,3,56 Degree,CHIP,rough,45.9,rough,21.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,17,3,0,8,4,56 Degree,CHIP,rough,21.9,green,10.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,17,3,0,8,5,Simmo the Savage,PUTT,green,10.1,hole,0.0,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,18,4,0,10,1,Big Bertha,TEE,tee,306.8,tee,305.2,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,18,4,0,10,2,Big Bertha,UNKNOWN,tee,305.2,rough,55.9,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,18,4,0,10,3,56 Degree,UNKNOWN,rough,55.9,rough,17.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,18,4,0,10,4,56 Degree,CHIP,rough,17.1,green,8.1,0
+22242515982,2026-03-20,Van Cortlandt Park Golf Course,18,4,0,10,5,Simmo the Savage,PUTT,green,8.1,hole,0.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,1,4,0,9,1,,CHIP,sand,31.9,green,20.6,0
+22143457608,2026-03-11,Heron Glen Golf Course,2,5,0,1,1,Big Bertha,TEE,tee,542.9,rough,299.8,0
+22143457608,2026-03-11,Heron Glen Golf Course,2,5,0,1,2,894935293,RECOVERY,rough,299.8,rough,217.2,0
+22143457608,2026-03-11,Heron Glen Golf Course,2,5,0,1,3,894935293,UNKNOWN,rough,217.6,green,21.5,0
+22143457608,2026-03-11,Heron Glen Golf Course,3,4,0,5,1,Big Bertha,TEE,tee,374.9,fairway,171.5,0
+22143457608,2026-03-11,Heron Glen Golf Course,3,4,0,5,2,894935293,APPROACH,fairway,171.5,sand,38.9,0
+22143457608,2026-03-11,Heron Glen Golf Course,3,4,0,5,3,,CHIP,sand,38.9,rough,18.8,0
+22143457608,2026-03-11,Heron Glen Golf Course,4,4,0,11,1,Big Bertha,TEE,tee,341.0,rough,60.2,0
+22143457608,2026-03-11,Heron Glen Golf Course,4,4,0,11,2,52 Degree,APPROACH,rough,60.2,rough,33.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,4,4,0,11,3,,UNKNOWN,rough,33.0,hole,0.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,5,3,0,15,1,894935296,APPROACH,tee,141.8,rough,70.9,0
+22143457608,2026-03-11,Heron Glen Golf Course,5,3,0,15,2,52 Degree,RECOVERY,rough,70.9,rough,57.9,0
+22143457608,2026-03-11,Heron Glen Golf Course,5,3,0,15,3,52 Degree,UNKNOWN,rough,57.9,rough,22.7,1
+22143457608,2026-03-11,Heron Glen Golf Course,6,4,0,7,1,Big Bertha,APPROACH,tee,282.1,fairway,86.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,6,4,0,7,2,Approach Wedge,APPROACH,fairway,86.6,rough,33.6,0
+22143457608,2026-03-11,Heron Glen Golf Course,6,4,0,7,3,,CHIP,rough,34.4,green,13.8,0
+22143457608,2026-03-11,Heron Glen Golf Course,7,3,0,17,1,894935298,APPROACH,tee,98.2,rough,25.2,0
+22143457608,2026-03-11,Heron Glen Golf Course,7,3,0,17,2,,CHIP,rough,25.2,green,8.6,0
+22143457608,2026-03-11,Heron Glen Golf Course,8,5,0,3,1,Big Bertha,TEE,tee,496.6,rough,191.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,8,5,0,3,2,894935293,RECOVERY,rough,191.0,rough,99.6,0
+22143457608,2026-03-11,Heron Glen Golf Course,8,5,0,3,3,,RECOVERY,rough,99.6,green,21.1,0
+22143457608,2026-03-11,Heron Glen Golf Course,9,4,0,13,1,Big Bertha,TEE,tee,327.7,fairway,148.2,0
+22143457608,2026-03-11,Heron Glen Golf Course,9,4,0,13,2,894935294,APPROACH,fairway,148.1,green,9.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,10,5,0,6,1,Big Bertha,TEE,tee,518.1,fairway,242.1,0
+22143457608,2026-03-11,Heron Glen Golf Course,10,5,0,6,2,894935293,LAYUP,fairway,242.1,rough,167.2,0
+22143457608,2026-03-11,Heron Glen Golf Course,10,5,0,6,3,,RECOVERY,rough,167.2,green,19.4,1
+22143457608,2026-03-11,Heron Glen Golf Course,11,4,0,14,1,Big Bertha,APPROACH,tee,259.3,rough,49.7,0
+22143457608,2026-03-11,Heron Glen Golf Course,11,4,0,14,2,,UNKNOWN,rough,49.7,hole,0.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,12,3,0,18,1,Approach Wedge,APPROACH,tee,107.7,rough,57.2,0
+22143457608,2026-03-11,Heron Glen Golf Course,12,3,0,18,2,52 Degree,APPROACH,rough,59.4,green,14.7,1
+22143457608,2026-03-11,Heron Glen Golf Course,13,5,0,4,1,Big Bertha,TEE,tee,465.1,rough,289.5,0
+22143457608,2026-03-11,Heron Glen Golf Course,13,5,0,4,2,Big Bertha,UNKNOWN,rough,289.5,rough,94.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,13,5,0,4,3,,RECOVERY,rough,94.0,green,12.4,1
+22143457608,2026-03-11,Heron Glen Golf Course,14,4,0,10,1,Big Bertha,TEE,tee,318.7,rough,90.3,0
+22143457608,2026-03-11,Heron Glen Golf Course,14,4,0,10,2,894935297,APPROACH,rough,90.8,fairway,32.7,0
+22143457608,2026-03-11,Heron Glen Golf Course,14,4,0,10,3,52 Degree,UNKNOWN,fairway,32.7,hole,0.0,1
+22143457608,2026-03-11,Heron Glen Golf Course,15,3,0,12,1,894935296,APPROACH,tee,166.3,rough,30.8,0
+22143457608,2026-03-11,Heron Glen Golf Course,15,3,0,12,2,,CHIP,rough,30.8,green,13.7,0
+22143457608,2026-03-11,Heron Glen Golf Course,16,5,0,2,1,894935293,TEE,tee,453.9,rough,243.9,0
+22143457608,2026-03-11,Heron Glen Golf Course,16,5,0,2,2,894935293,RECOVERY,rough,241.5,rough,139.5,0
+22143457608,2026-03-11,Heron Glen Golf Course,16,5,0,2,3,894935298,APPROACH,rough,139.5,rough,112.3,0
+22143457608,2026-03-11,Heron Glen Golf Course,16,5,0,2,4,52 Degree,APPROACH,rough,112.3,hole,0.0,0
+22143457608,2026-03-11,Heron Glen Golf Course,17,3,0,16,1,Approach Wedge,TEE,tee,124.1,fairway,27.4,0
+22143457608,2026-03-11,Heron Glen Golf Course,18,4,0,8,1,Big Bertha,TEE,tee,397.1,fairway,130.4,0
+22143457608,2026-03-11,Heron Glen Golf Course,18,4,0,8,2,894935297,APPROACH,fairway,130.8,rough,12.8,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,10,4,0,17,1,Big Bertha,TEE,tee,297.3,rough,139.1,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,10,4,0,17,2,894935294,APPROACH,rough,139.4,rough,45.6,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,10,4,0,17,3,894935298,UNKNOWN,rough,44.0,green,18.3,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,11,3,0,5,1,894935298,APPROACH,tee,122.2,green,10.6,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,12,4,0,7,1,Jo,TEE,tee,414.2,fairway,166.6,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,12,4,0,7,2,894935294,APPROACH,fairway,166.6,fairway,22.8,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,13,4,0,11,1,Jo,TEE,tee,357.4,rough,95.2,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,13,4,0,11,2,894935298,APPROACH,rough,95.2,rough,69.0,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,13,4,0,11,3,894935298,APPROACH,rough,69.0,hole,0.0,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,1,Jo,TEE,tee,407.4,waste,251.0,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,2,Big Bertha,APPROACH,waste,250.1,rough,197.3,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,3,894935293,UNKNOWN,rough,197.3,rough,50.2,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,4,894935298,UNKNOWN,rough,50.2,green,13.8,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,15,4,0,15,1,Jo,TEE,tee,296.4,green,4.4,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,1,Jo,TEE,tee,486.5,rough,297.3,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,2,Big Bertha,UNKNOWN,rough,297.3,rough,232.2,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,3,Big Bertha,APPROACH,rough,232.2,fairway,174.2,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,4,894935293,APPROACH,fairway,174.2,sand,104.6,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,5,,APPROACH,sand,104.6,rough,51.2,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,6,52 Degree,UNKNOWN,rough,51.2,hole,0.0,1
+21886216728,2026-02-16,Mystic Dunes Golf Club,17,3,0,9,1,894935293,TEE,tee,209.4,green,14.4,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,1,Jo,TEE,tee,404.1,sand,169.8,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,2,894935290,APPROACH,rough,168.7,sand,110.5,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,3,894935297,APPROACH,sand,110.5,rough,41.7,0
+21886216728,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,4,52 Degree,CHIP,rough,41.7,green,15.8,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,10,4,0,17,1,Big Bertha,TEE,tee,297.3,rough,139.1,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,10,4,0,17,2,894935294,APPROACH,rough,139.4,rough,45.6,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,10,4,0,17,3,894935298,UNKNOWN,rough,44.0,green,18.3,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,11,3,0,5,1,894935298,APPROACH,tee,122.2,green,10.6,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,12,4,0,7,1,Jo,TEE,tee,414.2,fairway,166.6,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,12,4,0,7,2,894935294,APPROACH,fairway,166.6,fairway,22.8,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,13,4,0,11,1,Jo,TEE,tee,357.4,rough,95.2,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,13,4,0,11,2,894935298,APPROACH,rough,95.2,rough,69.0,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,13,4,0,11,3,894935298,APPROACH,rough,69.0,hole,0.0,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,1,Jo,TEE,tee,407.4,waste,251.0,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,2,Big Bertha,APPROACH,waste,250.1,rough,197.3,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,3,894935293,UNKNOWN,rough,197.3,rough,50.2,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,14,5,0,3,4,894935298,UNKNOWN,rough,50.2,green,13.8,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,15,4,0,15,1,Jo,TEE,tee,296.4,green,4.4,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,1,Jo,TEE,tee,486.5,rough,297.3,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,2,Big Bertha,UNKNOWN,rough,297.3,rough,232.2,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,3,Big Bertha,APPROACH,rough,232.2,fairway,174.2,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,4,894935293,APPROACH,fairway,174.2,sand,104.6,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,5,,APPROACH,sand,104.6,rough,51.2,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,16,5,0,13,6,52 Degree,UNKNOWN,rough,51.2,hole,0.0,1
+21885334080,2026-02-16,Mystic Dunes Golf Club,17,3,0,9,1,894935293,TEE,tee,209.4,green,14.4,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,1,Jo,TEE,tee,404.1,sand,169.8,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,2,894935290,APPROACH,rough,168.7,sand,110.5,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,3,894935297,APPROACH,sand,110.5,rough,41.7,0
+21885334080,2026-02-16,Mystic Dunes Golf Club,18,4,0,1,4,52 Degree,CHIP,rough,41.7,green,15.8,0
+21601659489,2026-01-19,TPC of Myrtle Beach,1,4,0,9,1,Jo,TEE,tee,352.6,rough,158.5,0
+21601659489,2026-01-19,TPC of Myrtle Beach,1,4,0,9,2,894935290,APPROACH,rough,158.5,rough,113.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,1,4,0,9,3,894935297,APPROACH,rough,113.2,hole,0.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,2,5,0,7,1,Jo,TEE,tee,498.7,rough,340.3,0
+21601659489,2026-01-19,TPC of Myrtle Beach,2,5,0,7,2,Big Bertha,UNKNOWN,rough,340.3,rough,319.5,0
+21601659489,2026-01-19,TPC of Myrtle Beach,2,5,0,7,3,894935298,RECOVERY,rough,319.5,rough,301.7,0
+21601659489,2026-01-19,TPC of Myrtle Beach,2,5,0,7,4,Big Bertha,UNKNOWN,rough,301.7,rough,107.1,0
+21601659489,2026-01-19,TPC of Myrtle Beach,2,5,0,7,5,894935297,APPROACH,rough,107.1,green,14.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,3,4,0,3,1,Jo,TEE,tee,448.3,tee,288.1,0
+21601659489,2026-01-19,TPC of Myrtle Beach,3,4,0,3,2,Big Bertha,APPROACH,tee,288.1,rough,224.1,0
+21601659489,2026-01-19,TPC of Myrtle Beach,3,4,0,3,3,894935290,APPROACH,rough,224.1,rough,204.3,0
+21601659489,2026-01-19,TPC of Myrtle Beach,3,4,0,3,4,894935290,APPROACH,rough,204.3,rough,118.3,0
+21601659489,2026-01-19,TPC of Myrtle Beach,3,4,0,3,5,894935296,APPROACH,rough,118.3,rough,31.8,0
+21601659489,2026-01-19,TPC of Myrtle Beach,3,4,0,3,6,894935298,CHIP,rough,31.8,green,5.1,0
+21601659489,2026-01-19,TPC of Myrtle Beach,4,4,0,5,1,Jo,TEE,tee,438.2,rough,374.3,0
+21601659489,2026-01-19,TPC of Myrtle Beach,4,4,0,5,2,Big Bertha,LAYUP,rough,374.3,rough,223.6,0
+21601659489,2026-01-19,TPC of Myrtle Beach,4,4,0,5,3,894935290,APPROACH,rough,223.6,fairway,43.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,4,4,0,5,4,Simmo the Savage,CHIP,fairway,43.2,hole,0.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,5,3,0,15,1,894935296,APPROACH,tee,122.1,hole,0.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,6,5,0,11,1,Jo,TEE,tee,458.8,rough,413.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,6,5,0,11,2,Big Bertha,LAYUP,rough,410.0,fairway,211.8,0
+21601659489,2026-01-19,TPC of Myrtle Beach,6,5,0,11,3,894935290,APPROACH,fairway,211.8,fairway,40.9,0
+21601659489,2026-01-19,TPC of Myrtle Beach,6,5,0,11,4,894935298,CHIP,fairway,40.9,green,6.6,0
+21601659489,2026-01-19,TPC of Myrtle Beach,7,3,0,17,1,894935290,APPROACH,tee,155.9,tee,102.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,7,3,0,17,2,894935297,APPROACH,tee,102.2,fairway,14.3,0
+21601659489,2026-01-19,TPC of Myrtle Beach,8,4,0,13,1,Jo,TEE,tee,347.3,rough,167.8,0
+21601659489,2026-01-19,TPC of Myrtle Beach,8,4,0,13,2,894935297,UNKNOWN,rough,167.8,rough,122.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,8,4,0,13,3,894935290,APPROACH,rough,122.0,rough,13.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,9,4,0,1,1,Jo,TEE,tee,508.8,fairway,257.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,9,4,0,1,2,Big Bertha,APPROACH,fairway,257.2,rough,80.4,0
+21601659489,2026-01-19,TPC of Myrtle Beach,9,4,0,1,3,894935297,APPROACH,rough,80.9,hole,0.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,10,4,0,12,1,894935290,TEE,tee,335.8,rough,131.9,0
+21601659489,2026-01-19,TPC of Myrtle Beach,10,4,0,12,2,894935294,APPROACH,rough,131.9,rough,81.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,10,4,0,12,3,894935297,APPROACH,rough,81.0,rough,12.3,1
+21601659489,2026-01-19,TPC of Myrtle Beach,11,4,0,8,1,Jo,TEE,tee,387.7,rough,180.6,0
+21601659489,2026-01-19,TPC of Myrtle Beach,11,4,0,8,2,894935294,UNKNOWN,rough,180.6,fairway,76.6,0
+21601659489,2026-01-19,TPC of Myrtle Beach,11,4,0,8,3,894935297,APPROACH,fairway,76.6,rough,15.3,0
+21601659489,2026-01-19,TPC of Myrtle Beach,12,4,0,18,1,Jo,APPROACH,tee,263.9,rough,79.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,12,4,0,18,2,894935298,APPROACH,rough,79.2,green,7.2,1
+21601659489,2026-01-19,TPC of Myrtle Beach,13,3,0,14,1,894935296,APPROACH,tee,139.6,rough,64.6,0
+21601659489,2026-01-19,TPC of Myrtle Beach,13,3,0,14,2,894935298,UNKNOWN,rough,64.6,fairway,25.9,0
+21601659489,2026-01-19,TPC of Myrtle Beach,14,5,0,16,1,Jo,TEE,tee,506.8,rough,383.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,14,5,0,16,2,Big Bertha,UNKNOWN,rough,383.0,rough,250.5,0
+21601659489,2026-01-19,TPC of Myrtle Beach,14,5,0,16,3,Big Bertha,APPROACH,rough,250.5,fairway,44.1,0
+21601659489,2026-01-19,TPC of Myrtle Beach,14,5,0,16,4,894935298,CHIP,fairway,44.1,green,16.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,15,4,0,2,1,Jo,TEE,tee,415.9,fairway,302.7,0
+21601659489,2026-01-19,TPC of Myrtle Beach,15,4,0,2,2,Big Bertha,UNKNOWN,fairway,302.7,rough,159.4,0
+21601659489,2026-01-19,TPC of Myrtle Beach,15,4,0,2,3,894935290,APPROACH,rough,159.4,fairway,86.8,0
+21601659489,2026-01-19,TPC of Myrtle Beach,15,4,0,2,4,894935298,APPROACH,fairway,86.8,green,12.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,16,4,0,10,1,Jo,TEE,tee,360.3,sand,138.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,16,4,0,10,2,52 Degree,APPROACH,sand,138.2,rough,121.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,16,4,0,10,3,894935296,APPROACH,rough,121.5,rough,48.0,0
+21601659489,2026-01-19,TPC of Myrtle Beach,16,4,0,10,4,,UNKNOWN,rough,48.0,green,5.3,0
+21601659489,2026-01-19,TPC of Myrtle Beach,17,3,0,6,1,894935290,APPROACH,tee,160.4,rough,71.9,0
+21601659489,2026-01-19,TPC of Myrtle Beach,17,3,0,6,2,,RECOVERY,rough,71.9,sand,22.4,0
+21601659489,2026-01-19,TPC of Myrtle Beach,17,3,0,6,3,,CHIP,sand,22.5,green,5.5,1
+21601659489,2026-01-19,TPC of Myrtle Beach,18,5,0,4,1,Jo,TEE,tee,517.0,rough,266.7,0
+21601659489,2026-01-19,TPC of Myrtle Beach,18,5,0,4,2,Big Bertha,APPROACH,rough,266.7,rough,89.2,0
+21601659489,2026-01-19,TPC of Myrtle Beach,18,5,0,4,3,,APPROACH,rough,89.2,rough,20.2,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,1,4,0,12,1,Jo,TEE,tee,304.9,tee,257.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,1,4,0,12,2,Big Bertha,APPROACH,tee,257.0,fairway,71.2,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,1,4,0,12,3,894935298,APPROACH,fairway,71.2,rough,13.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,2,5,0,8,1,Jo,LAYUP,rough,540.1,fairway,522.9,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,2,5,0,8,2,Big Bertha,LAYUP,fairway,522.9,sand,364.9,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,2,5,0,8,3,894935294,LAYUP,sand,364.9,fairway,234.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,2,5,0,8,4,894935290,APPROACH,fairway,234.6,rough,133.3,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,2,5,0,8,5,894935294,APPROACH,rough,133.3,fairway,51.8,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,2,5,0,8,6,52 Degree,CHIP,fairway,51.8,green,5.9,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,3,3,0,14,1,894935290,APPROACH,tee,159.6,green,18.9,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,4,4,0,6,1,Jo,TEE,tee,360.0,fairway,199.8,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,4,4,0,6,2,Big Bertha,APPROACH,fairway,199.8,sand,104.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,4,4,0,6,3,894935293,APPROACH,sand,104.6,fairway,36.1,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,4,4,0,6,4,894935298,CHIP,fairway,36.1,green,17.5,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,5,4,0,2,1,Jo,TEE,tee,358.1,rough,271.8,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,5,4,0,2,2,Big Bertha,APPROACH,rough,271.8,fairway,224.4,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,5,4,0,2,3,Big Bertha,APPROACH,fairway,224.4,fairway,6.9,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,6,3,0,16,1,894935296,APPROACH,tee,125.2,hole,0.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,7,4,0,4,1,Jo,TEE,tee,347.3,rough,272.2,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,7,4,0,4,2,Big Bertha,APPROACH,rough,272.2,rough,112.7,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,7,4,0,4,3,894935294,APPROACH,rough,112.7,rough,31.4,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,7,4,0,4,4,,UNKNOWN,rough,31.4,hole,0.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,8,5,0,10,1,Jo,TEE,tee,436.1,fairway,234.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,8,5,0,10,2,894935290,APPROACH,fairway,234.0,fairway,106.4,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,8,5,0,10,3,894935293,APPROACH,fairway,106.4,rough,59.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,8,5,0,10,4,,CHIP,rough,59.6,green,27.1,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,9,3,0,18,1,894935298,APPROACH,tee,103.6,rough,7.5,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,10,5,0,15,1,Big Bertha,UNKNOWN,rough,751.0,tee,537.1,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,10,5,0,15,2,Jo,UNKNOWN,tee,537.1,rough,388.2,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,10,5,0,15,3,Big Bertha,LAYUP,rough,388.2,rough,390.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,10,5,0,15,4,Jo,LAYUP,rough,390.6,rough,290.9,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,10,5,0,15,5,Big Bertha,UNKNOWN,rough,290.9,fairway,102.2,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,10,5,0,15,6,894935298,APPROACH,fairway,102.4,hole,0.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,11,3,0,13,1,Big Bertha,APPROACH,tee,178.5,green,23.4,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,12,4,0,9,1,Jo,TEE,tee,369.8,fairway,156.1,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,12,4,0,9,2,894935290,APPROACH,fairway,156.1,rough,86.5,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,12,4,0,9,3,894935297,APPROACH,rough,86.5,green,9.8,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,13,4,0,5,1,Jo,TEE,tee,302.0,sand,206.5,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,13,4,0,5,2,894935294,LAYUP,sand,206.5,rough,62.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,13,4,0,5,3,52 Degree,CHIP,rough,62.6,sand,17.2,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,13,4,0,5,4,,UNKNOWN,sand,17.2,hole,0.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,14,4,0,7,1,Jo,TEE,tee,359.6,tee,311.7,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,14,4,0,7,2,Big Bertha,UNKNOWN,tee,311.7,rough,275.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,14,4,0,7,3,Big Bertha,UNKNOWN,rough,275.6,rough,257.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,14,4,0,7,4,Big Bertha,APPROACH,rough,257.0,fairway,75.7,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,14,4,0,7,5,894935298,APPROACH,fairway,75.7,hole,0.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,15,4,0,3,1,Jo,TEE,tee,420.3,fairway,311.5,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,15,4,0,3,2,Big Bertha,UNKNOWN,fairway,311.5,fairway,144.2,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,15,4,0,3,3,894935294,APPROACH,fairway,145.5,green,13.5,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,16,4,0,1,1,Jo,TEE,tee,385.5,rough,192.7,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,16,4,0,1,2,894935298,APPROACH,rough,192.7,fairway,133.1,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,16,4,0,1,3,894935294,APPROACH,fairway,133.1,fairway,71.6,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,16,4,0,1,4,894935296,APPROACH,fairway,71.6,rough,20.1,1
+21591757643,2026-01-18,Caledonia Golf & Fish Club,17,3,0,17,1,894935294,APPROACH,tee,156.7,sand,24.4,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,17,3,0,17,2,52 Degree,UNKNOWN,sand,24.4,green,0.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,17,3,0,17,3,894935298,UNKNOWN,rough,408.3,hole,0.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,18,4,0,11,1,Jo,TEE,tee,336.7,tee,322.0,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,18,4,0,11,2,Big Bertha,UNKNOWN,tee,320.1,fairway,187.4,0
+21591757643,2026-01-18,Caledonia Golf & Fish Club,18,4,0,11,3,Big Bertha,APPROACH,fairway,187.4,hole,0.0,0
+21579261480,2026-01-17,Pine Lakes International Country Club,1,4,0,15,1,Jo,TEE,tee,379.4,rough,173.8,0
+21579261480,2026-01-17,Pine Lakes International Country Club,1,4,0,15,2,894935290,APPROACH,rough,173.8,rough,33.3,0
+21579261480,2026-01-17,Pine Lakes International Country Club,1,4,0,15,3,894935298,CHIP,rough,33.3,green,21.2,0
+21579261480,2026-01-17,Pine Lakes International Country Club,2,3,0,9,1,894935290,APPROACH,tee,192.9,rough,70.7,0
+21579261480,2026-01-17,Pine Lakes International Country Club,2,3,0,9,2,894935298,APPROACH,rough,70.7,green,24.9,1
+21579261480,2026-01-17,Pine Lakes International Country Club,3,4,0,1,1,Jo,TEE,tee,474.8,fairway,190.6,0
+21579261480,2026-01-17,Pine Lakes International Country Club,3,4,0,1,2,894935290,APPROACH,fairway,190.6,rough,60.3,0
+21579261480,2026-01-17,Pine Lakes International Country Club,3,4,0,1,3,894935298,UNKNOWN,rough,60.3,hole,0.0,0
+21579261480,2026-01-17,Pine Lakes International Country Club,4,4,0,17,1,Jo,TEE,tee,352.3,rough,184.9,0
+21579261480,2026-01-17,Pine Lakes International Country Club,4,4,0,17,2,894935290,APPROACH,rough,184.9,rough,32.6,0
+21579261480,2026-01-17,Pine Lakes International Country Club,4,4,0,17,3,894935298,CHIP,rough,32.6,green,11.5,0
+21579261480,2026-01-17,Pine Lakes International Country Club,5,5,0,3,1,Jo,TEE,tee,394.2,fairway,291.4,0
+21579261480,2026-01-17,Pine Lakes International Country Club,5,5,0,3,2,Big Bertha,LAYUP,fairway,291.4,fairway,262.8,0
+21579261480,2026-01-17,Pine Lakes International Country Club,5,5,0,3,3,Big Bertha,LAYUP,fairway,262.8,fairway,140.5,0
+21579261480,2026-01-17,Pine Lakes International Country Club,5,5,0,3,4,894935294,APPROACH,fairway,140.5,rough,18.6,0
+21579261480,2026-01-17,Pine Lakes International Country Club,6,4,0,7,1,Jo,TEE,tee,410.3,fairway,178.2,0
+21579261480,2026-01-17,Pine Lakes International Country Club,6,4,0,7,2,894935293,APPROACH,fairway,178.2,rough,69.3,0
+21579261480,2026-01-17,Pine Lakes International Country Club,6,4,0,7,3,894935298,APPROACH,rough,69.3,hole,0.0,0
+21579261480,2026-01-17,Pine Lakes International Country Club,7,4,0,13,1,Jo,TEE,tee,366.8,rough,161.9,0
+21579261480,2026-01-17,Pine Lakes International Country Club,7,4,0,13,2,894935290,APPROACH,rough,161.9,rough,55.2,0
+21579261480,2026-01-17,Pine Lakes International Country Club,7,4,0,13,3,894935298,CHIP,rough,55.2,green,17.8,0
+21579261480,2026-01-17,Pine Lakes International Country Club,8,3,0,5,1,894935294,APPROACH,tee,156.7,hole,0.0,0
+21579261480,2026-01-17,Pine Lakes International Country Club,9,4,0,11,1,Jo,TEE,tee,343.3,rough,121.5,0
+21579261480,2026-01-17,Pine Lakes International Country Club,9,4,0,11,2,894935296,APPROACH,rough,120.0,green,16.0,0
+21579261480,2026-01-17,Pine Lakes International Country Club,10,5,0,10,1,Jo,TEE,tee,561.7,rough,377.1,0
+21579261480,2026-01-17,Pine Lakes International Country Club,10,5,0,10,2,Big Bertha,UNKNOWN,rough,377.1,rough,212.8,0
+21579261480,2026-01-17,Pine Lakes International Country Club,10,5,0,10,3,894935290,APPROACH,rough,212.8,fairway,23.1,0
+21579261480,2026-01-17,Pine Lakes International Country Club,10,5,0,10,4,,CHIP,fairway,23.1,rough,22.4,0
+21579261480,2026-01-17,Pine Lakes International Country Club,11,3,0,18,1,894935298,TEE,tee,142.7,rough,68.9,0
+21579261480,2026-01-17,Pine Lakes International Country Club,11,3,0,18,2,,RECOVERY,rough,68.9,rough,47.9,0
+21579261480,2026-01-17,Pine Lakes International Country Club,11,3,0,18,3,894935298,CHIP,rough,47.9,rough,13.4,0
+21579261480,2026-01-17,Pine Lakes International Country Club,12,4,0,8,1,Jo,TEE,tee,407.8,rough,173.2,0
+21579261480,2026-01-17,Pine Lakes International Country Club,12,4,0,8,2,894935293,UNKNOWN,rough,173.2,rough,46.2,0
+21579261480,2026-01-17,Pine Lakes International Country Club,12,4,0,8,3,894935298,CHIP,rough,46.2,green,5.8,0
+21579261480,2026-01-17,Pine Lakes International Country Club,13,4,0,4,1,Jo,TEE,tee,348.9,rough,149.4,0
+21579261480,2026-01-17,Pine Lakes International Country Club,13,4,0,4,2,894935296,APPROACH,rough,149.4,fairway,38.7,0
+21579261480,2026-01-17,Pine Lakes International Country Club,13,4,0,4,3,894935298,CHIP,fairway,38.7,rough,15.3,0
+21579261480,2026-01-17,Pine Lakes International Country Club,14,4,0,2,1,Jo,TEE,tee,483.0,tee,384.7,0
+21579261480,2026-01-17,Pine Lakes International Country Club,14,4,0,2,2,Jo,UNKNOWN,tee,384.7,rough,200.0,0
+21579261480,2026-01-17,Pine Lakes International Country Club,14,4,0,2,3,894935290,APPROACH,rough,200.0,rough,127.7,0
+21579261480,2026-01-17,Pine Lakes International Country Club,14,4,0,2,4,894935296,APPROACH,rough,127.7,rough,69.8,0
+21579261480,2026-01-17,Pine Lakes International Country Club,14,4,0,2,5,894935298,APPROACH,rough,69.8,green,14.2,1
+21579261480,2026-01-17,Pine Lakes International Country Club,15,4,0,16,1,Jo,TEE,tee,372.8,rough,162.9,0
+21579261480,2026-01-17,Pine Lakes International Country Club,15,4,0,16,2,894935296,APPROACH,rough,161.6,rough,51.2,0
+21579261480,2026-01-17,Pine Lakes International Country Club,15,4,0,16,3,894935298,CHIP,rough,51.2,green,14.9,0
+21579261480,2026-01-17,Pine Lakes International Country Club,16,3,0,14,1,894935290,APPROACH,tee,174.2,fairway,79.7,0
+21579261480,2026-01-17,Pine Lakes International Country Club,16,3,0,14,2,894935297,APPROACH,fairway,79.7,rough,22.5,0
+21579261480,2026-01-17,Pine Lakes International Country Club,16,3,0,14,3,,CHIP,rough,22.5,green,5.3,0
+21579261480,2026-01-17,Pine Lakes International Country Club,17,4,0,12,1,Jo,TEE,tee,366.7,rough,225.4,0
+21579261480,2026-01-17,Pine Lakes International Country Club,17,4,0,12,2,Big Bertha,UNKNOWN,rough,225.4,green,10.9,0
+21579261480,2026-01-17,Pine Lakes International Country Club,18,4,0,6,1,Jo,TEE,tee,365.7,fairway,283.4,0
+21579261480,2026-01-17,Pine Lakes International Country Club,18,4,0,6,2,Big Bertha,LAYUP,fairway,283.4,rough,142.7,0
+21579261480,2026-01-17,Pine Lakes International Country Club,18,4,0,6,3,,RECOVERY,rough,142.9,sand,33.6,0
+21579261480,2026-01-17,Pine Lakes International Country Club,18,4,0,6,4,52 Degree,CHIP,sand,28.7,green,6.8,1
+21569440148,2026-01-16,True Blue Golf Club,1,5,0,1,1,Jo,TEE,tee,497.2,sand,397.2,0
+21569440148,2026-01-16,True Blue Golf Club,1,5,0,1,2,,LAYUP,sand,397.2,sand,372.1,0
+21569440148,2026-01-16,True Blue Golf Club,1,5,0,1,3,894935290,UNKNOWN,sand,364.9,green,13.4,0
+21569440148,2026-01-16,True Blue Golf Club,2,4,0,11,1,Jo,TEE,tee,322.3,rough,153.0,0
+21569440148,2026-01-16,True Blue Golf Club,2,4,0,11,2,894935290,APPROACH,rough,153.0,sand,49.3,0
+21569440148,2026-01-16,True Blue Golf Club,2,4,0,11,3,894935298,CHIP,sand,49.3,green,25.4,0
+21569440148,2026-01-16,True Blue Golf Club,3,3,0,15,1,Jo,APPROACH,tee,156.0,hole,0.0,1
+21569440148,2026-01-16,True Blue Golf Club,4,5,0,5,1,Jo,TEE,tee,354.9,fairway,305.9,0
+21569440148,2026-01-16,True Blue Golf Club,4,5,0,5,2,Big Bertha,LAYUP,fairway,305.9,fairway,209.8,0
+21569440148,2026-01-16,True Blue Golf Club,4,5,0,5,3,894935290,APPROACH,fairway,209.8,rough,149.6,0
+21569440148,2026-01-16,True Blue Golf Club,4,5,0,5,4,52 Degree,APPROACH,sand,150.3,rough,127.9,0
+21569440148,2026-01-16,True Blue Golf Club,4,5,0,5,5,52 Degree,APPROACH,sand,127.6,fairway,111.2,0
+21569440148,2026-01-16,True Blue Golf Club,4,5,0,5,6,894935296,APPROACH,fairway,111.2,rough,56.1,0
+21569440148,2026-01-16,True Blue Golf Club,4,5,0,5,7,894935298,UNKNOWN,rough,56.1,hole,0.0,2
+21569440148,2026-01-16,True Blue Golf Club,5,4,0,13,1,,TEE,tee,392.3,fairway,255.8,0
+21569440148,2026-01-16,True Blue Golf Club,5,4,0,13,2,Big Bertha,RECOVERY,rough,256.2,rough,100.5,0
+21569440148,2026-01-16,True Blue Golf Club,5,4,0,13,3,894935298,APPROACH,rough,100.5,hole,0.0,0
+21569440148,2026-01-16,True Blue Golf Club,6,4,0,9,1,Jo,TEE,tee,373.0,fairway,140.0,0
+21569440148,2026-01-16,True Blue Golf Club,6,4,0,9,2,894935294,APPROACH,fairway,140.0,sand,132.6,0
+21569440148,2026-01-16,True Blue Golf Club,6,4,0,9,3,894935298,UNKNOWN,sand,132.6,rough,132.6,0
+21569440148,2026-01-16,True Blue Golf Club,6,4,0,9,4,,APPROACH,rough,132.6,rough,126.2,0
+21569440148,2026-01-16,True Blue Golf Club,7,3,0,17,1,894935290,APPROACH,tee,194.8,sand,38.7,0
+21569440148,2026-01-16,True Blue Golf Club,7,3,0,17,2,,CHIP,sand,38.7,sand,27.2,0
+21569440148,2026-01-16,True Blue Golf Club,7,3,0,17,3,,CHIP,sand,24.0,rough,28.2,0
+21569440148,2026-01-16,True Blue Golf Club,8,4,0,7,1,Jo,APPROACH,rough,257.0,fairway,234.0,0
+21569440148,2026-01-16,True Blue Golf Club,8,4,0,7,2,Big Bertha,UNKNOWN,fairway,234.0,rough,180.8,0
+21569440148,2026-01-16,True Blue Golf Club,8,4,0,7,3,894935293,LAYUP,rough,180.5,sand,123.2,0
+21569440148,2026-01-16,True Blue Golf Club,8,4,0,7,4,894935297,UNKNOWN,sand,123.2,fairway,66.1,0
+21569440148,2026-01-16,True Blue Golf Club,8,4,0,7,5,894935298,APPROACH,fairway,66.1,sand,37.4,0
+21569440148,2026-01-16,True Blue Golf Club,8,4,0,7,6,52 Degree,CHIP,sand,37.4,green,12.8,0
+21569440148,2026-01-16,True Blue Golf Club,9,5,0,3,1,Jo,TEE,tee,502.1,rough,300.0,0
+21569440148,2026-01-16,True Blue Golf Club,9,5,0,3,2,Big Bertha,RECOVERY,rough,300.0,rough,269.0,0
+21569440148,2026-01-16,True Blue Golf Club,9,5,0,3,3,894935290,APPROACH,rough,269.0,fairway,108.8,0
+21569440148,2026-01-16,True Blue Golf Club,9,5,0,3,4,894935297,APPROACH,fairway,108.8,hole,0.0,2
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,1,Jo,TEE,tee,544.0,fairway,414.8,0
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,2,Big Bertha,LAYUP,fairway,414.8,sand,244.2,0
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,3,,APPROACH,sand,244.2,sand,232.0,0
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,4,52 Degree,LAYUP,sand,228.2,fairway,224.6,0
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,5,894935293,LAYUP,fairway,226.3,fairway,105.4,0
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,6,894935296,APPROACH,fairway,105.4,rough,45.0,0
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,7,894935298,CHIP,rough,45.0,sand,26.3,0
+21569440148,2026-01-16,True Blue Golf Club,10,5,0,8,8,,UNKNOWN,sand,26.3,hole,0.0,0
+21569440148,2026-01-16,True Blue Golf Club,11,3,0,18,1,894935290,APPROACH,tee,169.3,rough,26.0,0
+21569440148,2026-01-16,True Blue Golf Club,11,3,0,18,2,,CHIP,rough,26.0,green,17.0,0
+21569440148,2026-01-16,True Blue Golf Club,12,4,0,10,1,Jo,TEE,tee,412.6,rough,187.7,0
+21569440148,2026-01-16,True Blue Golf Club,12,4,0,10,2,52 Degree,UNKNOWN,rough,187.7,rough,136.5,0
+21569440148,2026-01-16,True Blue Golf Club,12,4,0,10,3,894935296,APPROACH,rough,136.5,rough,39.2,0
+21569440148,2026-01-16,True Blue Golf Club,12,4,0,10,4,52 Degree,CHIP,rough,39.2,fairway,28.7,0
+21569440148,2026-01-16,True Blue Golf Club,12,4,0,10,5,,CHIP,fairway,28.7,green,10.4,0
+21569440148,2026-01-16,True Blue Golf Club,13,4,0,14,1,Jo,TEE,tee,380.3,sand,193.8,0
+21569440148,2026-01-16,True Blue Golf Club,13,4,0,14,2,,APPROACH,sand,193.8,sand,176.2,0
+21569440148,2026-01-16,True Blue Golf Club,13,4,0,14,3,52 Degree,APPROACH,sand,172.3,hole,0.0,0
+21569440148,2026-01-16,True Blue Golf Club,14,3,0,16,1,894935290,APPROACH,tee,151.7,rough,30.0,0
+21569440148,2026-01-16,True Blue Golf Club,14,3,0,16,2,,CHIP,rough,30.0,green,13.0,0
+21569440148,2026-01-16,True Blue Golf Club,15,5,0,4,1,Jo,LAYUP,rough,573.9,fairway,341.5,0
+21569440148,2026-01-16,True Blue Golf Club,15,5,0,4,2,Big Bertha,LAYUP,fairway,341.5,rough,198.4,0
+21569440148,2026-01-16,True Blue Golf Club,15,5,0,4,3,894935290,APPROACH,rough,198.4,fairway,126.8,0
+21569440148,2026-01-16,True Blue Golf Club,15,5,0,4,4,894935296,APPROACH,fairway,126.8,fairway,36.4,0
+21569440148,2026-01-16,True Blue Golf Club,15,5,0,4,5,,CHIP,fairway,36.4,rough,47.4,0
+21569440148,2026-01-16,True Blue Golf Club,15,5,0,4,6,52 Degree,UNKNOWN,rough,47.4,hole,0.0,0
+21569440148,2026-01-16,True Blue Golf Club,16,3,0,12,1,Jo,APPROACH,tee,180.2,fairway,63.9,0
+21569440148,2026-01-16,True Blue Golf Club,16,3,0,12,2,894935298,APPROACH,fairway,63.9,green,12.6,1
+21569440148,2026-01-16,True Blue Golf Club,17,4,0,2,1,Jo,TEE,tee,411.4,fairway,216.4,0
+21569440148,2026-01-16,True Blue Golf Club,17,4,0,2,2,894935290,APPROACH,fairway,216.4,fairway,139.7,0
+21569440148,2026-01-16,True Blue Golf Club,17,4,0,2,3,894935290,APPROACH,fairway,139.7,green,14.0,0
+21569440148,2026-01-16,True Blue Golf Club,18,4,0,6,1,Jo,TEE,tee,384.8,fairway,195.8,0
+21569440148,2026-01-16,True Blue Golf Club,18,4,0,6,2,Big Bertha,APPROACH,fairway,195.8,rough,91.8,0
+21569440148,2026-01-16,True Blue Golf Club,18,4,0,6,3,894935293,APPROACH,rough,91.8,rough,35.3,1
+21558905170,2026-01-15,TPC of Myrtle Beach,1,4,0,9,1,Jo,TEE,tee,376.3,fairway,196.1,0
+21558905170,2026-01-15,TPC of Myrtle Beach,1,4,0,9,2,894935290,APPROACH,fairway,196.1,rough,83.3,0
+21558905170,2026-01-15,TPC of Myrtle Beach,1,4,0,9,3,894935297,APPROACH,rough,83.3,rough,30.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,1,4,0,9,4,,CHIP,rough,30.6,rough,13.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,2,5,0,7,1,Jo,TEE,tee,557.7,tee,505.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,2,5,0,7,2,,UNKNOWN,tee,505.0,rough,429.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,2,5,0,7,3,Big Bertha,LAYUP,rough,429.7,fairway,373.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,2,5,0,7,4,Big Bertha,LAYUP,fairway,372.8,rough,243.2,0
+21558905170,2026-01-15,TPC of Myrtle Beach,2,5,0,7,5,894935290,LAYUP,rough,243.2,fairway,44.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,2,5,0,7,6,,CHIP,fairway,44.6,rough,17.2,0
+21558905170,2026-01-15,TPC of Myrtle Beach,3,4,0,3,1,Jo,TEE,tee,487.0,fairway,186.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,3,4,0,3,2,894935290,APPROACH,fairway,186.7,rough,21.0,1
+21558905170,2026-01-15,TPC of Myrtle Beach,4,4,0,5,1,Jo,TEE,tee,462.0,rough,229.8,0
+21558905170,2026-01-15,TPC of Myrtle Beach,4,4,0,5,2,894935290,LAYUP,rough,229.8,rough,61.3,0
+21558905170,2026-01-15,TPC of Myrtle Beach,4,4,0,5,3,894935298,APPROACH,rough,61.3,rough,17.3,0
+21558905170,2026-01-15,TPC of Myrtle Beach,5,3,0,15,1,894935293,TEE,tee,156.1,tee,90.9,0
+21558905170,2026-01-15,TPC of Myrtle Beach,5,3,0,15,2,,APPROACH,tee,91.7,rough,48.4,0
+21558905170,2026-01-15,TPC of Myrtle Beach,5,3,0,15,3,,CHIP,rough,48.4,hole,0.0,1
+21558905170,2026-01-15,TPC of Myrtle Beach,6,5,0,11,1,Jo,TEE,tee,491.2,rough,299.5,0
+21558905170,2026-01-15,TPC of Myrtle Beach,6,5,0,11,2,Big Bertha,LAYUP,rough,299.5,rough,307.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,6,5,0,11,3,Big Bertha,LAYUP,rough,307.7,rough,235.2,0
+21558905170,2026-01-15,TPC of Myrtle Beach,6,5,0,11,4,894935290,LAYUP,rough,235.2,rough,118.9,0
+21558905170,2026-01-15,TPC of Myrtle Beach,6,5,0,11,5,894935297,LAYUP,rough,118.9,rough,36.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,6,5,0,11,6,894935298,CHIP,rough,36.6,rough,21.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,7,3,0,17,1,Jo,APPROACH,tee,194.5,tee,123.4,0
+21558905170,2026-01-15,TPC of Myrtle Beach,7,3,0,17,2,894935293,UNKNOWN,tee,123.4,rough,65.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,7,3,0,17,3,894935298,APPROACH,rough,65.0,hole,0.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,8,4,0,13,1,Jo,TEE,tee,384.2,fairway,140.9,0
+21558905170,2026-01-15,TPC of Myrtle Beach,8,4,0,13,2,894935296,APPROACH,fairway,140.9,rough,78.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,8,4,0,13,3,894935298,APPROACH,rough,78.6,green,11.1,0
+21558905170,2026-01-15,TPC of Myrtle Beach,9,4,0,1,1,Jo,TEE,tee,530.1,rough,374.1,0
+21558905170,2026-01-15,TPC of Myrtle Beach,9,4,0,1,2,Big Bertha,UNKNOWN,rough,374.1,fairway,247.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,9,4,0,1,3,894935290,LAYUP,fairway,249.7,rough,103.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,9,4,0,1,4,894935298,APPROACH,rough,103.7,rough,43.9,0
+21558905170,2026-01-15,TPC of Myrtle Beach,9,4,0,1,5,,CHIP,rough,43.9,rough,28.5,0
+21558905170,2026-01-15,TPC of Myrtle Beach,9,4,0,1,6,,CHIP,rough,28.5,hole,0.0,1
+21558905170,2026-01-15,TPC of Myrtle Beach,10,4,0,12,1,Jo,TEE,tee,378.3,rough,155.1,0
+21558905170,2026-01-15,TPC of Myrtle Beach,10,4,0,12,2,894935290,APPROACH,rough,155.1,fairway,136.5,0
+21558905170,2026-01-15,TPC of Myrtle Beach,10,4,0,12,3,894935296,APPROACH,fairway,136.5,green,7.6,1
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,1,Jo,TEE,tee,452.6,rough,323.2,0
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,2,894935290,LAYUP,rough,323.2,rough,299.3,0
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,3,894935290,LAYUP,rough,299.3,rough,276.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,4,894935290,LAYUP,rough,276.0,rough,163.5,0
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,5,894935293,LAYUP,rough,163.5,rough,46.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,6,,CHIP,rough,46.0,green,16.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,7,Simmo the Savage,PUTT,green,16.6,sand,26.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,11,4,0,8,8,Jo,CHIP,sand,26.7,hole,0.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,12,4,0,18,1,Jo,TEE,tee,293.2,sand,95.1,0
+21558905170,2026-01-15,TPC of Myrtle Beach,12,4,0,18,2,894935296,APPROACH,sand,95.1,rough,29.1,0
+21558905170,2026-01-15,TPC of Myrtle Beach,12,4,0,18,3,,CHIP,rough,29.1,rough,18.3,0
+21558905170,2026-01-15,TPC of Myrtle Beach,12,4,0,18,4,,CHIP,rough,18.3,green,20.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,13,3,0,14,1,Big Bertha,APPROACH,tee,179.3,rough,67.5,0
+21558905170,2026-01-15,TPC of Myrtle Beach,13,3,0,14,2,,APPROACH,rough,67.5,rough,24.8,0
+21558905170,2026-01-15,TPC of Myrtle Beach,13,3,0,14,3,,CHIP,rough,24.8,green,6.0,0
+21558905170,2026-01-15,TPC of Myrtle Beach,14,5,0,16,1,Jo,TEE,tee,480.3,fairway,289.4,0
+21558905170,2026-01-15,TPC of Myrtle Beach,14,5,0,16,2,Big Bertha,LAYUP,fairway,289.4,rough,141.8,0
+21558905170,2026-01-15,TPC of Myrtle Beach,14,5,0,16,3,894935290,RECOVERY,rough,141.8,fairway,81.3,0
+21558905170,2026-01-15,TPC of Myrtle Beach,14,5,0,16,4,,APPROACH,fairway,83.5,sand,21.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,14,5,0,16,5,,CHIP,sand,21.7,sand,22.4,2
+21558905170,2026-01-15,TPC of Myrtle Beach,15,4,0,2,1,Jo,TEE,tee,450.5,sand,208.5,0
+21558905170,2026-01-15,TPC of Myrtle Beach,15,4,0,2,2,894935296,LAYUP,sand,209.4,fairway,120.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,15,4,0,2,3,894935298,UNKNOWN,fairway,120.6,sand,22.8,0
+21558905170,2026-01-15,TPC of Myrtle Beach,15,4,0,2,4,,CHIP,sand,22.8,green,18.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,16,4,0,10,1,Jo,TEE,tee,388.3,fairway,230.8,0
+21558905170,2026-01-15,TPC of Myrtle Beach,16,4,0,10,2,Big Bertha,UNKNOWN,fairway,230.8,rough,132.2,0
+21558905170,2026-01-15,TPC of Myrtle Beach,16,4,0,10,3,,APPROACH,rough,132.2,rough,90.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,16,4,0,10,4,,RECOVERY,rough,90.7,rough,20.7,0
+21558905170,2026-01-15,TPC of Myrtle Beach,16,4,0,10,5,,CHIP,sand,21.4,hole,0.0,1
+21558905170,2026-01-15,TPC of Myrtle Beach,17,3,0,6,1,894935293,TEE,tee,184.9,rough,72.4,0
+21558905170,2026-01-15,TPC of Myrtle Beach,17,3,0,6,2,894935298,APPROACH,rough,72.4,green,12.9,1
+21558905170,2026-01-15,TPC of Myrtle Beach,18,5,0,4,1,Jo,TEE,tee,548.8,fairway,322.1,0
+21558905170,2026-01-15,TPC of Myrtle Beach,18,5,0,4,2,Big Bertha,LAYUP,fairway,322.1,rough,132.8,0
+21558905170,2026-01-15,TPC of Myrtle Beach,18,5,0,4,3,894935296,APPROACH,rough,132.8,rough,60.4,0
+21558905170,2026-01-15,TPC of Myrtle Beach,18,5,0,4,4,,APPROACH,rough,60.3,rough,33.6,0
+21558905170,2026-01-15,TPC of Myrtle Beach,18,5,0,4,5,,CHIP,rough,33.6,hole,0.0,1
