@@ -90,12 +90,17 @@ SG_SHOT_FIELDS = [
 SG_SUMMARY_FIELDS = [
     "round_id", "round_date", "course_name",
     "benchmark_profile",
-    "sg_total",
-    "sg_drives",
-    "sg_long_approach",
-    "sg_short_approach",
-    "sg_putting",
     "shots_counted",
+    # Total
+    "sg_total",            "sg_total_mean_per_shot",   "sg_total_median_per_shot",   "sg_total_shots",
+    # Drives
+    "sg_drives",           "sg_drives_mean_per_shot",  "sg_drives_median_per_shot",  "sg_drives_shots",
+    # Long approach
+    "sg_long_approach",    "sg_long_approach_mean_per_shot",   "sg_long_approach_median_per_shot",   "sg_long_approach_shots",
+    # Short approach
+    "sg_short_approach",   "sg_short_approach_mean_per_shot",  "sg_short_approach_median_per_shot",  "sg_short_approach_shots",
+    # Putting
+    "sg_putting",          "sg_putting_mean_per_shot", "sg_putting_median_per_shot", "sg_putting_shots",
 ]
 
 
@@ -183,40 +188,59 @@ def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
 
     # ── Aggregate per round ──────────────────────────────────────────────────
     from collections import defaultdict
+    import statistics
 
-    rounds: dict[str, dict] = {}
+    CATS = ("drives", "long_approach", "short_approach", "putting")
+
+    # Collect individual SG values per round per category for mean/median
+    round_meta:   dict[str, dict]        = {}
+    round_values: dict[str, dict[str, list]] = {}
+
     for row in sg_shot_rows:
         rid = row["round_id"]
-        if rid not in rounds:
-            rounds[rid] = {
-                "round_id":    rid,
-                "round_date":  row["round_date"],
-                "course_name": row["course_name"],
+        if rid not in round_meta:
+            round_meta[rid] = {
+                "round_id":          rid,
+                "round_date":        row["round_date"],
+                "course_name":       row["course_name"],
                 "benchmark_profile": profile,
-                "sg_total":        0.0,
-                "sg_drives":       0.0,
-                "sg_long_approach":  0.0,
-                "sg_short_approach": 0.0,
-                "sg_putting":      0.0,
-                "shots_counted":   0,
             }
+            round_values[rid] = {cat: [] for cat in CATS}
+            round_values[rid]["total"] = []
 
         sg_val = _safe_float(row.get("sg"))
         if sg_val is None:
             continue
 
         cat = row.get("sg_category", "unknown")
-        rounds[rid]["sg_total"] = round(rounds[rid]["sg_total"] + sg_val, 4)
-        rounds[rid]["shots_counted"] += 1
+        round_values[rid]["total"].append(sg_val)
+        if cat in CATS:
+            round_values[rid][cat].append(sg_val)
 
-        if cat == "drives":
-            rounds[rid]["sg_drives"] = round(rounds[rid]["sg_drives"] + sg_val, 4)
-        elif cat == "long_approach":
-            rounds[rid]["sg_long_approach"] = round(rounds[rid]["sg_long_approach"] + sg_val, 4)
-        elif cat == "short_approach":
-            rounds[rid]["sg_short_approach"] = round(rounds[rid]["sg_short_approach"] + sg_val, 4)
-        elif cat == "putting":
-            rounds[rid]["sg_putting"] = round(rounds[rid]["sg_putting"] + sg_val, 4)
+    def _median(vals):
+        return round(statistics.median(vals), 4) if vals else ""
+
+    def _mean(vals):
+        return round(statistics.mean(vals), 4) if vals else ""
+
+    # Build summary rows
+    rounds = {}
+    for rid, meta in round_meta.items():
+        v = round_values[rid]
+        row_out = dict(meta)
+
+        for cat, key in [("total", "sg_total"), ("drives", "sg_drives"),
+                         ("long_approach", "sg_long_approach"),
+                         ("short_approach", "sg_short_approach"),
+                         ("putting", "sg_putting")]:
+            vals = v[cat]
+            row_out[key]                      = round(sum(vals), 4) if vals else 0.0
+            row_out[f"{key}_mean_per_shot"]   = _mean(vals)
+            row_out[f"{key}_median_per_shot"] = _median(vals)
+            row_out[f"{key}_shots"]           = len(vals)
+
+        row_out["shots_counted"] = len(v["total"])
+        rounds[rid] = row_out
 
     with open(sg_summary_csv, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=SG_SUMMARY_FIELDS)
@@ -225,13 +249,27 @@ def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
     print(f"Written: {sg_summary_csv}  ({len(rounds)} round(s))")
 
     # Print summary to console
+    def _fmt(v):
+        return f"{v:+.3f}" if isinstance(v, float) else str(v)
+
     for r in rounds.values():
-        print(f"\n  ── {r['round_date']} | {r['course_name']} ──")
-        print(f"     SG Total:          {r['sg_total']:+.2f}")
-        print(f"     SG Drives:         {r['sg_drives']:+.2f}")
-        print(f"     SG Long Approach:  {r['sg_long_approach']:+.2f}")
-        print(f"     SG Short Approach: {r['sg_short_approach']:+.2f}")
-        print(f"     SG Putting:        {r['sg_putting']:+.2f}")
+        print(f"\n  ── {r['round_date']} | {r['course_name']} ({r['benchmark_profile']}) ──")
+        print(f"  {'Category':<16}  {'Total':>7}  {'Shots':>5}  {'Mean/shot':>10}  {'Median/shot':>12}")
+        print(f"  {'-'*56}")
+        for label, key in [
+            ("Total",          "sg_total"),
+            ("Drives",         "sg_drives"),
+            ("Long Approach",  "sg_long_approach"),
+            ("Short Approach", "sg_short_approach"),
+            ("Putting",        "sg_putting"),
+        ]:
+            total  = r[key]
+            shots  = r[f"{key}_shots"]
+            mean   = r[f"{key}_mean_per_shot"]
+            median = r[f"{key}_median_per_shot"]
+            print(f"  {label:<16}  {total:>+7.2f}  {shots:>5}  "
+                  f"{_fmt(mean):>10}  {_fmt(median):>12}")
+
 
 
 def main(shots_csv: str = None, sg_shots_csv: str = None, sg_summary_csv: str = None,
