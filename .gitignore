@@ -1,0 +1,42 @@
+# ── Credentials & auth tokens — NEVER commit these ───────────────────────────
+token.json
+credentials.json
+*.token
+.env
+.env.*
+
+# ── Garmin cached login tokens ────────────────────────────────────────────────
+oauth1_token.json
+oauth2_token.json
+sso_token.json
+
+# ── Generated data files — personal golf round data ──────────────────────────
+data/
+*.csv
+*.json
+
+# ── Exception: keep the data folder tracked so it exists after cloning ───────
+!data/.gitkeep
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Windows ───────────────────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
