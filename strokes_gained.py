@@ -91,16 +91,16 @@ SG_SUMMARY_FIELDS = [
     "round_id", "round_date", "course_name",
     "benchmark_profile",
     "shots_counted",
-    # Total
-    "sg_total",            "sg_total_mean_per_shot",   "sg_total_median_per_shot",   "sg_total_shots",
+    # Total  (shots = valid SG shots; shots_all = includes zero-excluded shots)
+    "sg_total",            "sg_total_mean_per_shot",   "sg_total_median_per_shot",   "sg_total_shots",   "sg_total_shots_all",
     # Drives
-    "sg_drives",           "sg_drives_mean_per_shot",  "sg_drives_median_per_shot",  "sg_drives_shots",
+    "sg_drives",           "sg_drives_mean_per_shot",  "sg_drives_median_per_shot",  "sg_drives_shots",  "sg_drives_shots_all",
     # Long approach
-    "sg_long_approach",    "sg_long_approach_mean_per_shot",   "sg_long_approach_median_per_shot",   "sg_long_approach_shots",
+    "sg_long_approach",    "sg_long_approach_mean_per_shot",   "sg_long_approach_median_per_shot",   "sg_long_approach_shots",   "sg_long_approach_shots_all",
     # Short approach
-    "sg_short_approach",   "sg_short_approach_mean_per_shot",  "sg_short_approach_median_per_shot",  "sg_short_approach_shots",
+    "sg_short_approach",   "sg_short_approach_mean_per_shot",  "sg_short_approach_median_per_shot",  "sg_short_approach_shots",  "sg_short_approach_shots_all",
     # Putting
-    "sg_putting",          "sg_putting_mean_per_shot", "sg_putting_median_per_shot", "sg_putting_shots",
+    "sg_putting",          "sg_putting_mean_per_shot", "sg_putting_median_per_shot", "sg_putting_shots", "sg_putting_shots_all",
 ]
 
 
@@ -193,8 +193,10 @@ def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
     CATS = ("drives", "long_approach", "short_approach", "putting")
 
     # Collect individual SG values per round per category for mean/median
-    round_meta:   dict[str, dict]        = {}
-    round_values: dict[str, dict[str, list]] = {}
+    # Also track total shot counts including zero-excluded shots (for estimated impact)
+    round_meta:      dict[str, dict]             = {}
+    round_values:    dict[str, dict[str, list]]  = {}
+    round_shots_all: dict[str, dict[str, int]]   = {}  # includes zero-excluded
 
     for row in sg_shot_rows:
         rid = row["round_id"]
@@ -205,14 +207,21 @@ def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
                 "course_name":       row["course_name"],
                 "benchmark_profile": profile,
             }
-            round_values[rid] = {cat: [] for cat in CATS}
+            round_values[rid]    = {cat: [] for cat in CATS}
             round_values[rid]["total"] = []
+            round_shots_all[rid] = {cat: 0 for cat in CATS}
+            round_shots_all[rid]["total"] = 0
+
+        cat = row.get("sg_category", "unknown")
+        # Count every categorised shot regardless of whether SG is valid
+        if cat in CATS:
+            round_shots_all[rid][cat]    += 1
+            round_shots_all[rid]["total"] += 1
 
         sg_val = _safe_float(row.get("sg"))
         if sg_val is None:
             continue
 
-        cat = row.get("sg_category", "unknown")
         round_values[rid]["total"].append(sg_val)
         if cat in CATS:
             round_values[rid][cat].append(sg_val)
@@ -238,6 +247,7 @@ def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
             row_out[f"{key}_mean_per_shot"]   = _mean(vals)
             row_out[f"{key}_median_per_shot"] = _median(vals)
             row_out[f"{key}_shots"]           = len(vals)
+            row_out[f"{key}_shots_all"]       = round_shots_all[rid][cat]
 
         row_out["shots_counted"] = len(v["total"])
         rounds[rid] = row_out
@@ -274,21 +284,61 @@ def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
 
 def main(shots_csv: str = None, sg_shots_csv: str = None, sg_summary_csv: str = None,
          profile: str = None):
-    if shots_csv is None:
-        shots_csv = sys.argv[1] if len(sys.argv) > 1 else SHOTS_CSV
-    if sg_shots_csv is None:
-        sg_shots_csv = sys.argv[2] if len(sys.argv) > 2 else SG_SHOTS_CSV
-    if sg_summary_csv is None:
-        sg_summary_csv = sys.argv[3] if len(sys.argv) > 3 else SG_SUMMARY_CSV
+    """
+    Run SG calculations for all four benchmark profiles and write combined results.
+    sg_shots_csv stores the last-run profile's per-shot data.
+    sg_summary_csv accumulates rows for ALL profiles (keyed by round_id + profile).
+    """
+    if shots_csv    is None: shots_csv    = sys.argv[1] if len(sys.argv) > 1 else SHOTS_CSV
+    if sg_shots_csv is None: sg_shots_csv = sys.argv[2] if len(sys.argv) > 2 else SG_SHOTS_CSV
+    if sg_summary_csv is None: sg_summary_csv = sys.argv[3] if len(sys.argv) > 3 else SG_SUMMARY_CSV
+
+    # If a specific profile was requested (e.g. from run.py menu), run only that one
+    # Otherwise run all four and combine
     if profile is None:
-        # Allow --profile argument from command line
-        for i, arg in enumerate(sys.argv):
-            if arg == '--profile' and i + 1 < len(sys.argv):
-                profile = sys.argv[i + 1]
+        for arg in sys.argv:
+            if arg.startswith('--profile='):
+                profile = arg.split('=', 1)[1]
                 break
-        else:
-            profile = BENCHMARK_PROFILE
-    compute_sg(shots_csv, sg_shots_csv, sg_summary_csv, profile=profile)
+
+    profiles_to_run = AVAILABLE_PROFILES if profile is None else [profile]
+
+    # Load all existing summary rows so we can merge without duplicating
+    existing_rows = []
+    if os.path.exists(sg_summary_csv):
+        with open(sg_summary_csv, newline="", encoding="utf-8") as f:
+            existing_rows = list(csv.DictReader(f))
+    existing_keys = {(r["round_id"], r["benchmark_profile"]) for r in existing_rows}
+
+    new_summary_rows = []
+    for p in profiles_to_run:
+        print(f"\n── Profile: {p} ──")
+        # compute_sg writes sg_shots_csv for this profile; we capture summary rows
+        compute_sg(shots_csv, sg_shots_csv, sg_summary_csv, profile=p)
+        # Read the just-written summary and collect rows not already in existing
+        with open(sg_summary_csv, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                key = (row["round_id"], row["benchmark_profile"])
+                if key not in existing_keys:
+                    new_summary_rows.append(row)
+                    existing_keys.add(key)
+
+    # Write merged summary (existing + new)
+    all_rows = existing_rows + new_summary_rows
+    # Remove dupes that might exist from old single-profile runs
+    seen = set()
+    deduped = []
+    for row in all_rows:
+        key = (row["round_id"], row["benchmark_profile"])
+        if key not in seen:
+            seen.add(key)
+            deduped.append(row)
+
+    with open(sg_summary_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=SG_SUMMARY_FIELDS, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(deduped)
+    print(f"\nSummary: {len(deduped)} round×profile rows in {sg_summary_csv}")
 
 
 if __name__ == "__main__":

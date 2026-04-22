@@ -28,7 +28,15 @@ EXCLUDE_ZERO_SG = True
 #   "scratch" 0 handicap amateur
 #   "10"      10 handicap amateur
 #   "bogey"   18 handicap amateur — most useful if you're a typical club golfer
-BENCHMARK_PROFILE = "bogey"
+BENCHMARK_PROFILE = "tour"
+
+# ── Breakdown tab filters ─────────────────────────────────────────────────────
+# BREAKDOWN_LAST_N_ROUNDS: show only the last N rounds per profile. 0 = all.
+BREAKDOWN_LAST_N_ROUNDS = 0
+
+# BREAKDOWN_FROM_DATE: show only rounds on or after this date. "" = all.
+# Format: "YYYY-MM-DD"  e.g. "2026-01-01"
+BREAKDOWN_FROM_DATE = ""
 
 # ── Scorecard column mapping ──────────────────────────────────────────────────
 # These match the columns in YOUR existing tracking sheet (Step 5).
