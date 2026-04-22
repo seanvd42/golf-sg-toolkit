@@ -28,7 +28,7 @@ EXCLUDE_ZERO_SG = True
 #   "scratch" 0 handicap amateur
 #   "10"      10 handicap amateur
 #   "bogey"   18 handicap amateur — most useful if you're a typical club golfer
-BENCHMARK_PROFILE = "tour"
+BENCHMARK_PROFILE = "bogey"
 
 # ── Scorecard column mapping ──────────────────────────────────────────────────
 # These match the columns in YOUR existing tracking sheet (Step 5).
