@@ -42,7 +42,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from config import (DATA_DIR, SHOTS_CSV, SG_SHOTS_CSV, SG_SUMMARY_CSV,
-                    SHORT_APPROACH_THRESHOLD_YARDS, EXCLUDE_ZERO_SG, BENCHMARK_PROFILE)
+                    SHORT_APPROACH_THRESHOLD_YARDS, EXCLUDE_ZERO_SG)
 from benchmarks import expected_strokes, AVAILABLE_PROFILES
 
 
@@ -113,7 +113,7 @@ def _safe_float(val):
 
 def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
                threshold: float = SHORT_APPROACH_THRESHOLD_YARDS,
-               profile: str = BENCHMARK_PROFILE):
+               profile: str = "tour"):
 
     os.makedirs(os.path.dirname(sg_shots_csv) or ".", exist_ok=True)
     os.makedirs(os.path.dirname(sg_summary_csv) or ".", exist_ok=True)

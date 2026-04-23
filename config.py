@@ -21,15 +21,6 @@ SHORT_APPROACH_THRESHOLD_YARDS = 75   # ← tune this to your liking
 # not a genuinely average shot. Set to False to include them.
 EXCLUDE_ZERO_SG = True
 
-# ── Benchmark profile ─────────────────────────────────────────────────────────
-# Which player population to compare your shots against.
-# Options: "tour" | "scratch" | "10" | "bogey"
-#   "tour"    PGA Tour (Broadie / ShotLink 2004-2012) — largest negative numbers
-#   "scratch" 0 handicap amateur
-#   "10"      10 handicap amateur
-#   "bogey"   18 handicap amateur — most useful if you're a typical club golfer
-BENCHMARK_PROFILE = "tour"
-
 # ── Breakdown tab filters ─────────────────────────────────────────────────────
 # BREAKDOWN_LAST_N_ROUNDS: show only the last N rounds per profile. 0 = all.
 BREAKDOWN_LAST_N_ROUNDS = 0

@@ -200,10 +200,10 @@ def run_parse(json_path: str) -> str:
     return SHOTS_CSV
 
 
-def run_sg(shots_csv: str, profile: str = "tour"):
+def run_sg(shots_csv: str):
     import strokes_gained
     from config import SG_SHOTS_CSV, SG_SUMMARY_CSV
-    strokes_gained.main(shots_csv, SG_SHOTS_CSV, SG_SUMMARY_CSV, profile=profile)
+    strokes_gained.main(shots_csv, SG_SHOTS_CSV, SG_SUMMARY_CSV)
     return SG_SHOTS_CSV, SG_SUMMARY_CSV
 
 
@@ -343,25 +343,14 @@ def main():
     if choice in ("2", "3"):
         export_path = choose_rounds(export_path)
 
-    # ── benchmark profile selection ────────────────────────────────────────
-    from benchmarks import PROFILE_LABELS
-    print(f"\n  {B}Benchmark — compare yourself against:{RS}\n")
-    print(f"    {B}[1]{RS}  Tour Pro   (PGA Tour — Broadie / ShotLink data)")
-    print(f"    {B}[2]{RS}  Scratch    (0 handicap)")
-    print(f"    {B}[3]{RS}  10 Handicap")
-    print(f"    {B}[4]{RS}  Bogey      (18 handicap — typical club golfer)")
-    profile_choice = input("\n  Choice [default: 1]: ").strip() or "1"
-    profile = {"1": "tour", "2": "scratch", "3": "10", "4": "bogey"}.get(profile_choice, "tour")
-    ok(f"Benchmark: {PROFILE_LABELS[profile]}")
-
     # ── parse ──────────────────────────────────────────────────────────────
     step(2, "Parse shots → CSV")
     shots_csv = run_parse(export_path)
     ok(f"Written: {shots_csv}")
 
     # ── strokes gained ─────────────────────────────────────────────────────
-    step(3, "Calculate Strokes Gained")
-    sg_shots_csv, sg_summary_csv = run_sg(shots_csv, profile=profile)
+    step(3, "Calculate Strokes Gained  (all 4 benchmarks)")
+    sg_shots_csv, sg_summary_csv = run_sg(shots_csv)
     ok(f"Shot detail: {sg_shots_csv}")
     ok(f"Round summary: {sg_summary_csv}")
 

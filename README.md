@@ -63,36 +63,38 @@ pip install google-auth google-auth-oauthlib google-api-python-client
 |-----|----------|-------------|
 | **Hole by Hole** | Per-hole scorecard rows | Append (no duplicates) |
 | **Shot Detail** | Every shot with SG values | Append (no duplicates) |
-| **Breakdown** | SG summary aggregated across rounds, all profiles | Overwrite each run |
+| **Strokes Gained** | One block per round × benchmark — all detail | Overwrite each run |
+| **Breakdown** | Formula-driven summary with live filter cells | Overwrite each run |
+
+### Strokes Gained tab
+
+One block per round × benchmark profile (4 blocks per round), sorted oldest
+to newest. Each block shows Drives / Long Approach / Short Approach / Putting
+rows with Total Shots, Total SG, Avg/Shot, Median/Shot, and Est. Impact.
+Category rows have red→white→green conditional formatting; the Total row does not.
 
 ### Breakdown tab
 
-The Breakdown tab shows one section per benchmark profile:
+A compact summary table with two filter cells you edit directly in the sheet:
 
 ```
-PGA Tour (Broadie / ShotLink)   3 rounds  2026-01-15 → 2026-04-18
-Category        Rounds  Total Shots  Total SG  Avg/Shot  Median/Shot  Est. Impact
-Total                3           97    -29.55    -0.305       -0.454      -44.038
-Drives               3           18     -7.75    -0.430       -0.397       -7.146
-Long Approach        3           18     -6.46    -0.359       -0.433       -7.794
-Short Approach       3           22     -7.92    -0.360       -0.366       -8.074
-Putting              3           39     -7.43    -0.191       -0.840      -32.760
+A1: Last X Rounds    A2: 5        ← edit this number (0 = all rounds)
+A4: Benchmark        A5: Scratch  ← edit this label (Tour / Scratch / 10 Handicap / Bogey)
+
+     Category      Total Shots  Total SG  Avg/Shot  Median/Shot  Est. Impact
+     Drives              72       -13.12     -0.18        -0.24       -17.28
+     Long Approach       64       -19.81     -0.31        -0.35       -22.40
+     Short Approach      97       -34.42     -0.35        -0.39       -37.83
+     Putting            151       -19.53     -0.13        -0.79      -119.29
+     Total              384       -86.87     -0.98        -1.77           —
 ```
 
-**Estimated Impact** = median SG per shot × total shots in that category
-(including shots excluded from SG calculation due to zero values).
-This gives a more realistic picture of category impact than the raw total.
+All data columns recalculate instantly when you change A2 or A5.
+Category rows have conditional formatting (red→white→green).
+The Total row is bold with no conditional formatting.
 
-**Conditional formatting**: Total SG, Avg/Shot, Median/Shot, and Est. Impact
-columns are colour-graded red (negative) → white (0) → green (positive).
-
-### Filtering the Breakdown tab
-
-Edit in `config.py`:
-```python
-BREAKDOWN_LAST_N_ROUNDS = 5    # show only last 5 rounds (0 = all)
-BREAKDOWN_FROM_DATE = "2026-01-01"  # show rounds on/after this date
-```
+**Estimated Impact** = weighted median SG/shot × total shots in category
+(total shots includes zero-SG shots excluded from avg/median calculations).
 
 ---
 
@@ -103,10 +105,7 @@ SHORT_APPROACH_THRESHOLD_YARDS = 75   # chips vs approaches distance cutoff
 
 EXCLUDE_ZERO_SG = True     # exclude shots where SG == 0.0 (GPS artifacts)
 
-BENCHMARK_PROFILE = "tour" # default profile for single-profile runs
-                           # options: "tour" | "scratch" | "10" | "bogey"
-
-BREAKDOWN_LAST_N_ROUNDS = 0   # 0 = all rounds
+BREAKDOWN_LAST_N_ROUNDS = 0   # 0 = all rounds (Breakdown tab filter default)
 BREAKDOWN_FROM_DATE = ""      # "" = no date filter
 
 GOOGLE_SHEET_ID = "..."
