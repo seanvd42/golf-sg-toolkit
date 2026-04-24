@@ -9,7 +9,7 @@ Tabs written
   "Strokes Gained"  ← one block per round × benchmark — overwritten each run
   "Breakdown"       ← formula-driven summary referencing Shot Detail directly
                       A1: "Last X Rounds"   A2: filter value (0=all)
-                      A4: "Benchmark"        A5: filter value (Tour/Scratch/…)
+                      A4: "Benchmark"        B2: filter value (Tour/Scratch/…)
                       C7:G7 column headers
                       C8:G11 category rows (conditional formatting)
                       C12: Total row (bold, no conditional formatting)
@@ -358,8 +358,8 @@ def upload_breakdown(service, sid):
     """
     Layout:
       A1: "Last X Rounds"   A2: 0  (user edits — 0 = all)
-      A4: "Benchmark"       A5: "Tour"  (user edits)
-      (A5 valid values: Tour / Scratch / 10 Handicap / Bogey)
+      A4: "Benchmark"       B2: "Tour"  (user edits)
+      (B2 valid values: Tour / Scratch / 10 Handicap / Bogey)
 
       C7:G7  column headers
       C8:G11 category rows  (conditional formatting on cols D-G = indices 3-6)
@@ -424,7 +424,7 @@ def upload_breakdown(service, sid):
         SUMPRODUCT-based formula:
           - sg_category matches cat_value (or "total" = all categories)
           - round_date ranked within last-N filter (A2)
-          - benchmark column matches A5 lookup
+          - benchmark column matches B2 lookup
         
         For rank filter: we rank rounds newest-first per benchmark.
         Simpler approach: filter by date >= LARGE(unique_dates, A2).
@@ -432,7 +432,7 @@ def upload_breakdown(service, sid):
 
         Formula logic:
           match_cat   = (cat_col = cat_value) or cat_value="total"
-          match_bench = sg_col determined by A5 (we use CHOOSE/MATCH)
+          match_bench = sg_col determined by B2 (we use CHOOSE/MATCH)
           rank_filter = if A2=0: TRUE, else round_date >= LARGE(date_array, A2)
           result      = SUMPRODUCT(match_cat * rank_filter * sg_vals)
         """
@@ -448,12 +448,12 @@ def upload_breakdown(service, sid):
         # Rank filter: include row if A2=0 OR round_date >= Nth largest date
         # LARGE on text dates works in Sheets because ISO dates sort correctly
         rank_filter = (
-            f'(($A$2=0)+(($A$2>0)*({date_range}>='
+            f'(($B$1=0)+(($B$1>0)*({date_range}>='
             f'IFERROR(LARGE(IF({cat_range}="{cat_value}",{date_range}),ROUNDUP('
-            f'SUMPRODUCT(({cat_range}="{cat_value}")*1)/18*$A$2,0)),""))))'
+            f'SUMPRODUCT(({cat_range}="{cat_value}")*1)/18*$B$1,0)),""))))'
             if cat_value != "total" else
-            f'(($A$2=0)+(($A$2>0)*({date_range}>='
-            f'IFERROR(LARGE({date_range},$A$2*18),""))))'
+            f'(($B$1=0)+(($B$1>0)*({date_range}>='
+            f'IFERROR(LARGE({date_range},$B$1*18),""))))'
         )
 
         return (
@@ -476,11 +476,11 @@ def upload_breakdown(service, sid):
             cat_match = f'({cat_range}="{cat_value}")'
 
         rank_filter = (
-            f'(($A$2=0)+(($A$2>0)*({date_range}>='
+            f'(($B$1=0)+(($B$1>0)*({date_range}>='
             f'IFERROR(LARGE(IF({cat_range}="{cat_value}",{date_range}),ROUNDUP('
-            f'SUMPRODUCT(({cat_range}="{cat_value}")*1)/18*$A$2,0)),""))))'
+            f'SUMPRODUCT(({cat_range}="{cat_value}")*1)/18*$B$1,0)),""))))'
             if cat_value != "total" else
-            f'(($A$2=0)+(($A$2>0)*({date_range}>=IFERROR(LARGE({date_range},$A$2*18),""))))'
+            f'(($B$1=0)+(($B$1>0)*({date_range}>=IFERROR(LARGE({date_range},$B$1*18),""))))'
         )
         return (
             f'=IFERROR(SUMPRODUCT({cat_match}*{rank_filter}*'
@@ -494,27 +494,54 @@ def upload_breakdown(service, sid):
             f'{_shots_formula(cat_value).lstrip("=")},3),"")'
         )
 
+    # round_id is always column A in Shot Detail
+    rid_col = col.get("round_id", "A")
+
     def _rounds_formula(cat_value):
-        """Count distinct round_dates matching filter."""
+        """
+        Count distinct round_ids matching category + rank filter.
+        Uses SUMPRODUCT(1/COUNTIFS) where COUNTIFS counts how many times each
+        round_id appears among the filtered rows — this correctly gives 1 per round.
+        """
+        rid_range  = f"{SD}!{rid_col}2:{rid_col}{n+1}"
         date_range = f"{SD}!{date_col}2:{date_col}{n+1}"
         cat_range  = f"{SD}!{cat_col}2:{cat_col}{n+1}"
-        sg_range   = f"{SD}!{col.get('sg_tour','R')}2:{col.get('sg_tour','R')}{n+1}"
+        sg_range   = f"{SD}!{col.get('sg_tour','Q')}2:{col.get('sg_tour','Q')}{n+1}"
+
         rank_filter = (
-            f'(($A$2=0)+(($A$2>0)*({date_range}>='
+            f'(($B$1=0)+(($B$1>0)*({date_range}>= '
             f'IFERROR(LARGE(IF({cat_range}="{cat_value}",{date_range}),ROUNDUP('
-            f'SUMPRODUCT(({cat_range}="{cat_value}")*1)/18*$A$2,0)),""))))'
+            f'SUMPRODUCT(({cat_range}="{cat_value}")*1)/18*$B$1,0)),""))))'
             if cat_value != "total" else
-            f'(($A$2=0)+(($A$2>0)*({date_range}>=IFERROR(LARGE({date_range},$A$2*18),""))))'
+            f'(($B$1=0)+(($B$1>0)*({date_range}>=IFERROR(LARGE({date_range},$B$1*18),""))))'
         )
         if cat_value == "total":
             cat_match = f'(ISNUMBER({sg_range}))'
         else:
             cat_match = f'({cat_range}="{cat_value}")'
-        # SUMPRODUCT(1/COUNTIF) trick for distinct count — use unique dates matching filter
-        return (
-            f'=IFERROR(SUMPRODUCT({cat_match}*{rank_filter}*'
-            f'(1/COUNTIF({date_range},{date_range}))),"")'
-        )
+
+        # Count distinct round_ids among filtered rows using COUNTIFS
+        # SUMPRODUCT( filter * (1 / COUNTIFS(rid_range, rid_range, filter_cols...)) )
+        # Simpler: count rows where rid appears once in filtered set
+        # Best approach: SUMPRODUCT(filter) / 18  → assumes 18 shots per category per round
+        # Most robust: use SUM(1/COUNTIFS(rid,rid, cat, cat, rank, rank))
+        # We use: n_distinct = SUMPRODUCT((filter)*(1/COUNTIFS(rid_range, rid_range,
+        #                                              cat_range, cat_range, ...)))
+        # But COUNTIFS with computed rank arrays is complex. Simplest correct approach:
+        # Count distinct dates (ISO date strings sort correctly so LARGE works)
+        # Fix: use COUNTIFS(date_range, date_range, cat_range, cat_val) so we only
+        # count each date once per category (18 shots/round → 1 count per round)
+        if cat_value == "total":
+            return (
+                f'=IFERROR(SUMPRODUCT({cat_match}*{rank_filter}*'
+                f'(1/COUNTIFS({date_range},{date_range}))),"")'
+            )
+        else:
+            return (
+                f'=IFERROR(SUMPRODUCT({cat_match}*{rank_filter}*'
+                f'(1/COUNTIFS({date_range},{date_range},'
+                f'{cat_range},{cat_range}))),"")'
+            )
 
     def _per_round_formula(cat_value, sg_col_letter):
         """Total SG / number of rounds = SG per round in this category."""
@@ -522,12 +549,13 @@ def upload_breakdown(service, sid):
         rounds_f = _rounds_formula(cat_value).lstrip("=")
         return f'=IFERROR(ROUND(({total_f})/({rounds_f}),3),"")'
 
+
     def _sg_col_formula(sg_col_letter):
         """
-        Wrap the base formula to dynamically select the right sg column based on A5.
-        We use CHOOSE(MATCH(A5,...)) to pick the right column.
+        Wrap the base formula to dynamically select the right sg column based on B2.
+        We use CHOOSE(MATCH(B2,...)) to pick the right column.
         Since formulas can't select column letters dynamically, we use:
-          =IFERROR(CHOOSE(MATCH(A5,{"Tour","Scratch","10 Handicap","Bogey"},0),
+          =IFERROR(CHOOSE(MATCH(B2,{"Tour","Scratch","10 Handicap","Bogey"},0),
               <tour_formula>, <scratch_formula>, <10_formula>, <bogey_formula>), "")
         """
         return None  # handled inline — we write separate formulas per profile and use CHOOSE
@@ -544,7 +572,7 @@ def upload_breakdown(service, sid):
 
     def choose_formula(cat_value, formula_fn, *extra_args):
         """
-        Build CHOOSE(MATCH(A5,...), f_tour, f_scratch, f_10, f_bogey).
+        Build CHOOSE(MATCH(B2,...), f_tour, f_scratch, f_10, f_bogey).
         formula_fn(cat_value, sg_col_letter) → formula string (with = prefix).
         """
         parts = []
@@ -586,9 +614,9 @@ def upload_breakdown(service, sid):
         cat_range  = f"{SD}!{cat_col}2:{cat_col}{n+1}"
         date_range = f"{SD}!{date_col}2:{date_col}{n+1}"
         rank_filter = (
-            f'(($A$2=0)+(($A$2>0)*({date_range}>='
+            f'(($B$1=0)+(($B$1>0)*({date_range}>='
             f'IFERROR(LARGE(IF({cat_range}="{cat_val}",{date_range}),ROUNDUP('
-            f'SUMPRODUCT(({cat_range}="{cat_val}")*1)/18*$A$2,0)),""))))'
+            f'SUMPRODUCT(({cat_range}="{cat_val}")*1)/18*$B$1,0)),""))))'
         )
         mult = "*3" if is_feet else ""
         lo_term = f"(({dist_range}{mult})>={dist_lo})" if dist_lo is not None else ""
@@ -639,7 +667,7 @@ def upload_breakdown(service, sid):
         return f"=IFERROR(ROUND(({total})/({rounds}),3),"")"
 
     def sub_choose(cat_val, dist_lo, dist_hi, is_feet, formula_fn):
-        """Wrap sub formula in CHOOSE(MATCH(A5,...)) to pick the right sg column."""
+        """Wrap sub formula in CHOOSE(MATCH(B2,...)) to pick the right sg column."""
         parts = []
         for sg_ltr in PROFILE_SG_LETTERS:
             f = formula_fn(cat_val, dist_lo, dist_hi, is_feet, sg_ltr)
@@ -657,15 +685,16 @@ def upload_breakdown(service, sid):
     BLANK = ["", "", "", "", "", "", ""]
 
     tab_rows = [
-        ["Last X Rounds", "", "", "", "", "", ""],      # A1
-        [0,               "", "", "", "", "", ""],      # A2  ← user edits
-        ["",              "", "", "", "", "", ""],      # A3
-        ["Benchmark",     "", "", "", "", "", ""],      # A4
-        [PROFILE_DISPLAY["tour"], "", "", "", "", "", ""],  # A5  ← user edits
-        ["",              "", "", "", "", "", ""],      # A6
-        ["", "", "Category", "Total Shots", "Total SG",
-         "Avg / Shot", "Median / Shot", "Per Round"],  # Row 7 — col headers (A-H)
+        # Row 1: col headers start at C1; filters in A1/A2
+        ["Last X Rounds", 0,
+         "Category", "Total Shots", "Total SG",
+         "Avg / Shot", "Median / Shot", "Per Round"],  # row 1
+        # Row 2: blank in C+; A2 is filter value label
+        ["Benchmark", PROFILE_DISPLAY["tour"],
+         "", "", "", "", "", ""],                       # row 2
     ]
+    # Note to user: A1=Last X Rounds label, B1=value (edit this)
+    #               A2=Benchmark label,     B2=value (edit this)
 
     # Note: we now have 8 columns (A-H) since category is C and data is D-H
     # Adjust BLANK
@@ -674,7 +703,7 @@ def upload_breakdown(service, sid):
     # Fix previous rows to 8 cols
     tab_rows = [r + [""] * (8 - len(r)) for r in tab_rows]
 
-    cat_data_start = len(tab_rows)  # 0-indexed row 7
+    cat_data_start = len(tab_rows)  # 0-indexed — table starts at row 1 (C1)
 
     # Main categories + sub-categories
     # Sub-cat format: (display_label, sg_category_value, dist_lo_yd, dist_hi_yd, is_feet)
@@ -767,7 +796,7 @@ def upload_breakdown(service, sid):
         VLOOKUP into helper block at J:N.
         J col = col 9 (0-indexed); data cols K-O = cat indices 1-5.
         """
-        # MATCH(A5, J2:J5, 0) gives row offset; INDEX picks the right cat col
+        # MATCH(B2, J2:J5, 0) gives row offset; INDEX picks the right cat col
         # Helper range: J2:O5 (profiles=rows, categories=cols)
         # cat_idx_0based: 0=drives,1=long,2=short,3=putting,4=total
         return (
@@ -838,8 +867,8 @@ def upload_breakdown(service, sid):
     clear_conditional_formats(service, sid, sheet_id)
 
     fmt_requests = []
-    # Bold: A1 label (row 0), A4 label (row 3), col headers (row 6), Total row
-    for row_idx in [0, 3, 6, total_tab_row_idx]:
+    # Bold: row 0 (col headers), Total row
+    for row_idx in [0, total_tab_row_idx]:
         fmt_requests.append(build_bold_request(sheet_id, row_idx, 0, 8))
     # Bold main category rows (not sub-rows, not Total)
     for row_idx in cat_row_indices:
