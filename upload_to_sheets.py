@@ -570,36 +570,45 @@ def upload_breakdown(service, sid):
         col.get("sg_bogey",   "U"),
     ]
 
-    def choose_formula(cat_value, formula_fn, *extra_args):
+    def choose_formula(cat_value, formula_fn, error_val='""'):
         """
-        Build CHOOSE(MATCH(B2,...), f_tour, f_scratch, f_10, f_bogey).
-        formula_fn(cat_value, sg_col_letter) → formula string (with = prefix).
+        Build CHOOSE(MATCH($B$2,...), f_tour, f_scratch, f_10, f_bogey).
+        error_val: what IFERROR returns — use '""' for display cells,
+                   '0' when the result will be used inside a division.
         """
         parts = []
         for sg_ltr in PROFILE_SG_LETTERS:
             f = formula_fn(cat_value, sg_ltr)
-            # Strip outer =IFERROR( ... ,"") wrapper to nest inside CHOOSE
-            inner = f.lstrip("=")
-            parts.append(inner)
+            parts.append(f.lstrip("="))
         labels_str = '","'.join(PROFILE_LABELS_LIST)
         return (
             f'=IFERROR(CHOOSE(MATCH($B$2,{{"{labels_str}"}},0),'
-            f'{",".join(parts)}),"")'
+            f'{",".join(parts)}),{error_val})'
         )
 
     def shots_choose(cat_value):
-        """Shots count doesn't depend on profile — just return the formula."""
         return _shots_formula(cat_value)
 
     def avg_choose(cat_value):
-        total_choose = choose_formula(cat_value, _sumif_formula).lstrip("=")
-        shots_f      = _shots_formula(cat_value).lstrip("=")
-        return f'=IFERROR(ROUND(({total_choose})/({shots_f}),3),"")'
+        # Embed 0-fallback numerator directly; outer IFERROR shows "" if shots=0
+        shots_f = _shots_formula(cat_value).lstrip("=")
+        parts = []
+        for sg_ltr in PROFILE_SG_LETTERS:
+            f = _sumif_formula(cat_value, sg_ltr).lstrip("=")
+            parts.append(f)
+        labels_str = '","'.join(PROFILE_LABELS_LIST)
+        numerator = f'IFERROR(CHOOSE(MATCH($B$2,{{"{labels_str}"}},0),{",".join(parts)}),0)'
+        return f'=IFERROR(ROUND(({numerator})/({shots_f}),3),"")'
 
     def per_round_choose(cat_value):
-        total_choose  = choose_formula(cat_value, _sumif_formula).lstrip("=")
-        rounds_f      = _rounds_formula(cat_value).lstrip("=")
-        return f'=IFERROR(ROUND(({total_choose})/({rounds_f}),3),"")'
+        rounds_f = _rounds_formula(cat_value).lstrip("=")
+        parts = []
+        for sg_ltr in PROFILE_SG_LETTERS:
+            f = _sumif_formula(cat_value, sg_ltr).lstrip("=")
+            parts.append(f)
+        labels_str = '","'.join(PROFILE_LABELS_LIST)
+        numerator = f'IFERROR(CHOOSE(MATCH($B$2,{{"{labels_str}"}},0),{",".join(parts)}),0)'
+        return f'=IFERROR(ROUND(({numerator})/({rounds_f}),3),"")'
 
     # ── Sub-category formula builders ────────────────────────────────────────
     dist_col = col.get("start_dist_yards", "L")
@@ -651,7 +660,7 @@ def upload_breakdown(service, sid):
                   f"{cat_range},{cat_range})))")
         return f'=IFERROR(ROUND(({total})/({rounds}),3),"")'
 
-    def sub_choose(cat_val, dist_lo, dist_hi, formula_fn):
+    def sub_choose(cat_val, dist_lo, dist_hi, formula_fn, error_val='""'):
         """Wrap in CHOOSE(MATCH($B$2,...)) to pick the right sg column."""
         parts = []
         for sg_ltr in PROFILE_SG_LETTERS:
@@ -659,7 +668,7 @@ def upload_breakdown(service, sid):
             parts.append(f.lstrip("="))
         labels_str = '","'.join(PROFILE_LABELS_LIST)
         return (f'=IFERROR(CHOOSE(MATCH($B$2,{{"{labels_str}"}},0),'
-                f'{",".join(parts)}),"")')
+                f'{",".join(parts)}),{error_val})')
 
     # ── Build tab rows ────────────────────────────────────────────────────────
     # Columns: A B C D E F G
