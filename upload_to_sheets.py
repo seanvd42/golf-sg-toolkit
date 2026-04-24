@@ -561,7 +561,7 @@ def upload_breakdown(service, sid):
         return None  # handled inline — we write separate formulas per profile and use CHOOSE
 
     # Because Sheets formulas can't dynamically pick a column by name, we use
-    # CHOOSE(MATCH($A$5,{profiles},0), f_tour, f_scratch, f_10, f_bogey) for each cell.
+    # CHOOSE(MATCH($B$2,{profiles},0), f_tour, f_scratch, f_10, f_bogey) for each cell.
     PROFILE_LABELS_LIST = ["Tour", "Scratch", "10 Handicap", "Bogey"]
     PROFILE_SG_LETTERS = [
         col.get("sg_tour",    "R"),
@@ -583,7 +583,7 @@ def upload_breakdown(service, sid):
             parts.append(inner)
         labels_str = '","'.join(PROFILE_LABELS_LIST)
         return (
-            f'=IFERROR(CHOOSE(MATCH($A$5,{{"{labels_str}"}},0),'
+            f'=IFERROR(CHOOSE(MATCH($B$2,{{"{labels_str}"}},0),'
             f'{",".join(parts)}),"")'
         )
 
@@ -604,12 +604,8 @@ def upload_breakdown(service, sid):
     # ── Sub-category formula builders ────────────────────────────────────────
     dist_col = col.get("start_dist_yards", "L")
 
-    def _dist_filter(dist_lo, dist_hi, is_feet, cat_val):
-        """
-        Build SUMPRODUCT distance filter terms.
-        For putting, start_dist_yards is in yards — multiply by 3 for feet.
-        dist_lo / dist_hi are in the same unit as the label (yards or feet).
-        """
+    def _dist_filter(dist_lo, dist_hi, cat_val):
+        """Build SUMPRODUCT filter for category + distance range (in yards) + last-N rank."""
         dist_range = f"{SD}!{dist_col}2:{dist_col}{n+1}"
         cat_range  = f"{SD}!{cat_col}2:{cat_col}{n+1}"
         date_range = f"{SD}!{date_col}2:{date_col}{n+1}"
@@ -618,62 +614,51 @@ def upload_breakdown(service, sid):
             f'IFERROR(LARGE(IF({cat_range}="{cat_val}",{date_range}),ROUNDUP('
             f'SUMPRODUCT(({cat_range}="{cat_val}")*1)/18*$B$1,0)),""))))'
         )
-        mult = "*3" if is_feet else ""
-        lo_term = f"(({dist_range}{mult})>={dist_lo})" if dist_lo is not None else ""
-        hi_term = f"(({dist_range}{mult})<{dist_hi})"  if dist_hi is not None else ""
+        lo_term = f"({dist_range}>={dist_lo})" if dist_lo is not None else ""
+        hi_term = f"({dist_range}<{dist_hi})"  if dist_hi is not None else ""
         dist_terms = "*".join(t for t in [lo_term, hi_term] if t)
         cat_match  = f'({cat_range}="{cat_val}")'
         return f"{cat_match}*{rank_filter}*{dist_terms}" if dist_terms else f"{cat_match}*{rank_filter}"
 
-    def sub_shots_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
-        """Count shots in sub-category range with valid SG."""
-        filt = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
+    def sub_shots_formula(cat_val, dist_lo, dist_hi, sg_ltr):
+        filt     = _dist_filter(dist_lo, dist_hi, cat_val)
         sg_range = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
         return f'=IFERROR(SUMPRODUCT({filt}*ISNUMBER({sg_range})*1),"")'
 
-    def sub_total_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
-        """Sum SG values for sub-category."""
-        filt = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
+    def sub_total_formula(cat_val, dist_lo, dist_hi, sg_ltr):
+        filt     = _dist_filter(dist_lo, dist_hi, cat_val)
         sg_range = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
-        return f'=IFERROR(ROUND(SUMPRODUCT({filt}*IFERROR({sg_range}*1,0)),3),"")'  
+        return f'=IFERROR(ROUND(SUMPRODUCT({filt}*IFERROR({sg_range}*1,0)),3),"")'
 
-    def sub_avg_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
-        """Avg SG per shot for sub-category."""
-        filt     = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
+    def sub_avg_formula(cat_val, dist_lo, dist_hi, sg_ltr):
+        filt     = _dist_filter(dist_lo, dist_hi, cat_val)
         sg_range = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
         total    = f"SUMPRODUCT({filt}*IFERROR({sg_range}*1,0))"
         count    = f"SUMPRODUCT({filt}*ISNUMBER({sg_range})*1)"
-        return f"=IFERROR(ROUND({total}/{count},3),"")"
+        return f'=IFERROR(ROUND({total}/{count},3),"")'
 
-    def sub_median_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
-        """
-        True median via PERCENTILE on filtered array — uses helper IFERROR trick.
-        Approximated as weighted average of shot SGs (PERCENTILE needs array magic).
-        We use the same weighted-avg-of-medians approach as main categories:
-        here with only one shot-level value, we use avg as proxy for median.
-        For a real median we'd need LARGE/SMALL array — acceptable tradeoff.
-        """
-        return sub_avg_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr)
+    def sub_median_formula(cat_val, dist_lo, dist_hi, sg_ltr):
+        return sub_avg_formula(cat_val, dist_lo, dist_hi, sg_ltr)
 
-    def sub_per_round_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
-        """Total SG / rounds count for sub-category."""
-        filt      = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
-        sg_range  = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
+    def sub_per_round_formula(cat_val, dist_lo, dist_hi, sg_ltr):
+        filt       = _dist_filter(dist_lo, dist_hi, cat_val)
+        sg_range   = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
         date_range = f"{SD}!{date_col}2:{date_col}{n+1}"
-        total     = f"SUMPRODUCT({filt}*IFERROR({sg_range}*1,0))"
-        # Count distinct dates matching filter (SUMPRODUCT 1/COUNTIFS trick)
-        rounds    = (f"SUMPRODUCT({filt}*"
-                     f"(1/COUNTIF({date_range},{date_range})))")
-        return f"=IFERROR(ROUND(({total})/({rounds}),3),"")"
+        cat_range  = f"{SD}!{cat_col}2:{cat_col}{n+1}"
+        total  = f"SUMPRODUCT({filt}*IFERROR({sg_range}*1,0))"
+        rounds = (f"SUMPRODUCT({filt}*(1/COUNTIFS("
+                  f"{date_range},{date_range},"
+                  f"{cat_range},{cat_range})))")
+        return f'=IFERROR(ROUND(({total})/({rounds}),3),"")'
 
-    def sub_choose(cat_val, dist_lo, dist_hi, is_feet, formula_fn):
-        """Wrap sub formula in CHOOSE(MATCH(B2,...)) to pick the right sg column."""
+    def sub_choose(cat_val, dist_lo, dist_hi, formula_fn):
+        """Wrap in CHOOSE(MATCH($B$2,...)) to pick the right sg column."""
         parts = []
         for sg_ltr in PROFILE_SG_LETTERS:
-            f = formula_fn(cat_val, dist_lo, dist_hi, is_feet, sg_ltr)
+            f = formula_fn(cat_val, dist_lo, dist_hi, sg_ltr)
             parts.append(f.lstrip("="))
         labels_str = '","'.join(PROFILE_LABELS_LIST)
-        return (f'=IFERROR(CHOOSE(MATCH($A$5,{{"{labels_str}"}},0),'
+        return (f'=IFERROR(CHOOSE(MATCH($B$2,{{"{labels_str}"}},0),'
                 f'{",".join(parts)}),"")')
 
     # ── Build tab rows ────────────────────────────────────────────────────────
@@ -706,42 +691,43 @@ def upload_breakdown(service, sid):
     cat_data_start = len(tab_rows)  # 0-indexed — table starts at row 1 (C1)
 
     # Main categories + sub-categories
-    # Sub-cat format: (display_label, sg_category_value, dist_lo_yd, dist_hi_yd, is_feet)
-    # dist_lo_yd=None means no lower bound; dist_hi_yd=None means no upper bound
-    # is_feet=True: start_dist_yards is multiplied by 3 before comparison (putting)
+    # Sub-cat format: (display_label, sg_category_value, dist_lo_yd, dist_hi_yd)
+    # Thresholds are in YARDS (start_dist_yards is always yards)
+    # Foot labels are shown for user-friendliness but thresholds are yards
     CAT_DEFS = [
         {
             "label":   "Drives",
             "cat_key": "drives",
-            "subs": [],   # no sub-breakdown for drives
+            "subs": [],
         },
         {
             "label":   "Long Approach",
             "cat_key": "long_approach",
             "subs": [
-                ("  > 150 yds",   "long_approach", 150,  None,  False),
-                ("  100 – 150",   "long_approach", 100,  150,   False),
-                ("  75 – 100",    "long_approach", None, 100,   False),
+                ("  > 150 yds",  "long_approach", 150,        None),
+                ("  100 – 150",  "long_approach", 100,        150),
+                ("  75 – 100",   "long_approach", None,       100),
             ],
         },
         {
             "label":   "Short Approach",
             "cat_key": "short_approach",
             "subs": [
-                ("  50 – 75 yds", "short_approach", 50,  None,  False),
-                ("  25 – 50",     "short_approach", 25,  50,    False),
-                ("  < 25 yds",    "short_approach", None, 25,   False),
+                ("  50 – 75 yds","short_approach", 50,        None),
+                ("  25 – 50",    "short_approach", 25,        50),
+                ("  < 25 yds",   "short_approach", None,      25),
             ],
         },
         {
             "label":   "Putting",
             "cat_key": "putting",
             "subs": [
-                ("  > 20 ft",     "putting", 20,   None,  True),
-                ("  10 – 20 ft",  "putting", 10,   20,    True),
-                ("  6 – 10 ft",   "putting", 6,    10,    True),
-                ("  3 – 6 ft",    "putting", 3,    6,     True),
-                ("  < 3 ft",      "putting", None, 3,     True),
+                # Thresholds in yards (divide feet by 3); labels show feet
+                ("  > 20 ft",    "putting", 6.6667,   None),
+                ("  10 – 20 ft", "putting", 3.3333,   6.6667),
+                ("  6 – 10 ft",  "putting", 2.0,      3.3333),
+                ("  3 – 6 ft",   "putting", 1.0,      2.0),
+                ("  < 3 ft",     "putting", None,     1.0),
             ],
         },
     ]
@@ -801,7 +787,7 @@ def upload_breakdown(service, sid):
         # cat_idx_0based: 0=drives,1=long,2=short,3=putting,4=total
         return (
             f'=IFERROR(INDEX(K2:O5,'
-            f'MATCH($A$5,J2:J5,0),'
+            f'MATCH($B$2,J2:J5,0),'
             f'{cat_idx_0based + 1}),"")'
         )
 
@@ -828,15 +814,15 @@ def upload_breakdown(service, sid):
         ])
 
         # Sub-category rows (indented label; no bold, no conditional formatting)
-        for sub_label, sub_cat, lo, hi, is_ft in cat_def["subs"]:
+        for sub_label, sub_cat, lo, hi in cat_def["subs"]:
             tab_rows.append([
                 "", "",
                 sub_label,
-                sub_choose(sub_cat, lo, hi, is_ft, sub_shots_formula),
-                sub_choose(sub_cat, lo, hi, is_ft, sub_total_formula),
-                sub_choose(sub_cat, lo, hi, is_ft, sub_avg_formula),
-                sub_choose(sub_cat, lo, hi, is_ft, sub_median_formula),
-                sub_choose(sub_cat, lo, hi, is_ft, sub_per_round_formula),
+                sub_choose(sub_cat, lo, hi, sub_shots_formula),
+                sub_choose(sub_cat, lo, hi, sub_total_formula),
+                sub_choose(sub_cat, lo, hi, sub_avg_formula),
+                sub_choose(sub_cat, lo, hi, sub_median_formula),
+                sub_choose(sub_cat, lo, hi, sub_per_round_formula),
             ])
 
     # Total row — always last, always bold, never formatted
