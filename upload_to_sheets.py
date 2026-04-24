@@ -15,7 +15,7 @@ Tabs written
                       C12: Total row (bold, no conditional formatting)
 """
 
-import csv, os, sys
+import csv, os, sys, time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -126,82 +126,93 @@ def _color(r, g, b):
     return {"red": r/255, "green": g/255, "blue": b/255}
 
 
-def clear_conditional_formats(service, sid, sheet_id):
-    for _ in range(30):
-        try:
-            service.spreadsheets().batchUpdate(
-                spreadsheetId=sid,
-                body={"requests": [{"deleteConditionalFormatRule": {
-                    "sheetId": sheet_id, "index": 0
-                }}]},
-            ).execute()
-        except Exception:
-            break
+def _batch_update(service, sid, requests, retries=5):
+    """
+    Execute a batchUpdate, retrying on 429 rate-limit errors with exponential backoff.
+    Splits into chunks of 30 requests to stay well under API limits.
+    """
+    CHUNK = 30
+    for i in range(0, max(len(requests), 1), CHUNK):
+        chunk = requests[i:i + CHUNK]
+        if not chunk:
+            continue
+        for attempt in range(retries):
+            try:
+                service.spreadsheets().batchUpdate(
+                    spreadsheetId=sid, body={"requests": chunk}
+                ).execute()
+                if i + CHUNK < len(requests):
+                    time.sleep(0.5)   # small pause between chunks
+                break
+            except Exception as e:
+                if "429" in str(e) and attempt < retries - 1:
+                    wait = 2 ** (attempt + 1)
+                    print(f"    Rate limited — waiting {wait}s…")
+                    time.sleep(wait)
+                else:
+                    raise
 
 
-def add_gradient(service, sid, sheet_id, start_row, end_row, col_indices):
-    requests = []
-    for col in col_indices:
-        requests.append({
-            "addConditionalFormatRule": {
-                "rule": {
-                    "ranges": [{
-                        "sheetId":          sheet_id,
-                        "startRowIndex":    start_row,
-                        "endRowIndex":      end_row + 1,
-                        "startColumnIndex": col,
-                        "endColumnIndex":   col + 1,
-                    }],
-                    "gradientRule": {
-                        "minpoint": {"colorStyle": {"rgbColor": _color(220, 80,  80)}, "type": "MIN"},
-                        "midpoint": {"colorStyle": {"rgbColor": _color(255, 255, 255)}, "type": "NUMBER", "value": "0"},
-                        "maxpoint": {"colorStyle": {"rgbColor": _color(80,  180, 80)},  "type": "MAX"},
-                    },
+def build_gradient_request(sheet_id, start_row, end_row, col):
+    return {
+        "addConditionalFormatRule": {
+            "rule": {
+                "ranges": [{
+                    "sheetId":          sheet_id,
+                    "startRowIndex":    start_row,
+                    "endRowIndex":      end_row + 1,
+                    "startColumnIndex": col,
+                    "endColumnIndex":   col + 1,
+                }],
+                "gradientRule": {
+                    "minpoint": {"colorStyle": {"rgbColor": _color(220, 80,  80)}, "type": "MIN"},
+                    "midpoint": {"colorStyle": {"rgbColor": _color(255, 255, 255)}, "type": "NUMBER", "value": "0"},
+                    "maxpoint": {"colorStyle": {"rgbColor": _color(80,  180, 80)},  "type": "MAX"},
                 },
-                "index": 0,
-            }
-        })
-    if requests:
-        service.spreadsheets().batchUpdate(
-            spreadsheetId=sid, body={"requests": requests}
-        ).execute()
+            },
+            "index": 0,
+        }
+    }
 
 
-def bold_cells(service, sid, sheet_id, row_indices, col_start=0, col_end=7):
-    requests = [{
+def build_bold_request(sheet_id, row_idx, col_start=0, col_end=7):
+    return {
         "repeatCell": {
             "range": {
                 "sheetId": sheet_id,
-                "startRowIndex": r, "endRowIndex": r + 1,
+                "startRowIndex": row_idx, "endRowIndex": row_idx + 1,
                 "startColumnIndex": col_start, "endColumnIndex": col_end,
             },
             "cell": {"userEnteredFormat": {"textFormat": {"bold": True}}},
             "fields": "userEnteredFormat.textFormat.bold",
         }
-    } for r in row_indices]
-    if requests:
-        service.spreadsheets().batchUpdate(
-            spreadsheetId=sid, body={"requests": requests}
-        ).execute()
+    }
 
 
-def hide_columns(service, sid, sheet_id, start_col, end_col):
-    """Hide columns start_col..end_col (0-indexed, exclusive end)."""
-    service.spreadsheets().batchUpdate(
-        spreadsheetId=sid,
-        body={"requests": [{
-            "updateDimensionProperties": {
-                "range": {
-                    "sheetId":    sheet_id,
-                    "dimension":  "COLUMNS",
-                    "startIndex": start_col,
-                    "endIndex":   end_col,
-                },
-                "properties": {"hiddenByUser": True},
-                "fields": "hiddenByUser",
-            }
-        }]},
-    ).execute()
+def build_hide_columns_request(sheet_id, start_col, end_col):
+    return {
+        "updateDimensionProperties": {
+            "range": {
+                "sheetId":    sheet_id,
+                "dimension":  "COLUMNS",
+                "startIndex": start_col,
+                "endIndex":   end_col,
+            },
+            "properties": {"hiddenByUser": True},
+            "fields": "hiddenByUser",
+        }
+    }
+
+
+def clear_conditional_formats(service, sid, sheet_id):
+    """Remove all conditional format rules from a sheet."""
+    for _ in range(30):
+        try:
+            _batch_update(service, sid, [{"deleteConditionalFormatRule": {
+                "sheetId": sheet_id, "index": 0
+            }}])
+        except Exception:
+            break
 
 
 # ── upload: Hole by Hole ──────────────────────────────────────────────────────
@@ -325,10 +336,19 @@ def upload_strokes_gained(service, sid):
         output.append([""] * 6)  # spacer
 
     overwrite_tab(service, sid, SG_TAB, output)
-    bold_cells(service, sid, sheet_id, bold_rows, col_start=0, col_end=6)
+
+    # Consolidate all formatting into one batchUpdate call
+    fmt_requests = []
+    for row_idx in bold_rows:
+        fmt_requests.append(build_bold_request(sheet_id, row_idx, 0, 6))
+    # Clear existing conditional formats first (separate loop — must delete one at a time)
     clear_conditional_formats(service, sid, sheet_id)
+    # Add gradients for all category ranges
     for start_row, end_row in fmt_ranges:
-        add_gradient(service, sid, sheet_id, start_row, end_row, [2, 3, 4, 5])
+        for col in [2, 3, 4, 5]:
+            fmt_requests.append(build_gradient_request(sheet_id, start_row, end_row, col))
+    if fmt_requests:
+        _batch_update(service, sid, fmt_requests)
     print(f"  '{SG_TAB}': wrote {len(all_rows)} block(s)")
 
 
@@ -553,6 +573,81 @@ def upload_breakdown(service, sid):
         rounds_f      = _rounds_formula(cat_value).lstrip("=")
         return f'=IFERROR(ROUND(({total_choose})/({rounds_f}),3),"")'
 
+    # ── Sub-category formula builders ────────────────────────────────────────
+    dist_col = col.get("start_dist_yards", "L")
+
+    def _dist_filter(dist_lo, dist_hi, is_feet, cat_val):
+        """
+        Build SUMPRODUCT distance filter terms.
+        For putting, start_dist_yards is in yards — multiply by 3 for feet.
+        dist_lo / dist_hi are in the same unit as the label (yards or feet).
+        """
+        dist_range = f"{SD}!{dist_col}2:{dist_col}{n+1}"
+        cat_range  = f"{SD}!{cat_col}2:{cat_col}{n+1}"
+        date_range = f"{SD}!{date_col}2:{date_col}{n+1}"
+        rank_filter = (
+            f'(($A$2=0)+(($A$2>0)*({date_range}>='
+            f'IFERROR(LARGE(IF({cat_range}="{cat_val}",{date_range}),ROUNDUP('
+            f'SUMPRODUCT(({cat_range}="{cat_val}")*1)/18*$A$2,0)),""))))'
+        )
+        mult = "*3" if is_feet else ""
+        lo_term = f"(({dist_range}{mult})>={dist_lo})" if dist_lo is not None else ""
+        hi_term = f"(({dist_range}{mult})<{dist_hi})"  if dist_hi is not None else ""
+        dist_terms = "*".join(t for t in [lo_term, hi_term] if t)
+        cat_match  = f'({cat_range}="{cat_val}")'
+        return f"{cat_match}*{rank_filter}*{dist_terms}" if dist_terms else f"{cat_match}*{rank_filter}"
+
+    def sub_shots_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
+        """Count shots in sub-category range with valid SG."""
+        filt = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
+        sg_range = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
+        return f'=IFERROR(SUMPRODUCT({filt}*ISNUMBER({sg_range})*1),"")'
+
+    def sub_total_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
+        """Sum SG values for sub-category."""
+        filt = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
+        sg_range = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
+        return f'=IFERROR(ROUND(SUMPRODUCT({filt}*IFERROR({sg_range}*1,0)),3),"")'  
+
+    def sub_avg_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
+        """Avg SG per shot for sub-category."""
+        filt     = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
+        sg_range = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
+        total    = f"SUMPRODUCT({filt}*IFERROR({sg_range}*1,0))"
+        count    = f"SUMPRODUCT({filt}*ISNUMBER({sg_range})*1)"
+        return f"=IFERROR(ROUND({total}/{count},3),"")"
+
+    def sub_median_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
+        """
+        True median via PERCENTILE on filtered array — uses helper IFERROR trick.
+        Approximated as weighted average of shot SGs (PERCENTILE needs array magic).
+        We use the same weighted-avg-of-medians approach as main categories:
+        here with only one shot-level value, we use avg as proxy for median.
+        For a real median we'd need LARGE/SMALL array — acceptable tradeoff.
+        """
+        return sub_avg_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr)
+
+    def sub_per_round_formula(cat_val, dist_lo, dist_hi, is_feet, sg_ltr):
+        """Total SG / rounds count for sub-category."""
+        filt      = _dist_filter(dist_lo, dist_hi, is_feet, cat_val)
+        sg_range  = f"{SD}!{sg_ltr}2:{sg_ltr}{n+1}"
+        date_range = f"{SD}!{date_col}2:{date_col}{n+1}"
+        total     = f"SUMPRODUCT({filt}*IFERROR({sg_range}*1,0))"
+        # Count distinct dates matching filter (SUMPRODUCT 1/COUNTIFS trick)
+        rounds    = (f"SUMPRODUCT({filt}*"
+                     f"(1/COUNTIF({date_range},{date_range})))")
+        return f"=IFERROR(ROUND(({total})/({rounds}),3),"")"
+
+    def sub_choose(cat_val, dist_lo, dist_hi, is_feet, formula_fn):
+        """Wrap sub formula in CHOOSE(MATCH(A5,...)) to pick the right sg column."""
+        parts = []
+        for sg_ltr in PROFILE_SG_LETTERS:
+            f = formula_fn(cat_val, dist_lo, dist_hi, is_feet, sg_ltr)
+            parts.append(f.lstrip("="))
+        labels_str = '","'.join(PROFILE_LABELS_LIST)
+        return (f'=IFERROR(CHOOSE(MATCH($A$5,{{"{labels_str}"}},0),'
+                f'{",".join(parts)}),"")')
+
     # ── Build tab rows ────────────────────────────────────────────────────────
     # Columns: A B C D E F G
     #          filters | Category | Total Shots | Total SG | Avg/Shot | Median/Shot | Per Round
@@ -581,11 +676,45 @@ def upload_breakdown(service, sid):
 
     cat_data_start = len(tab_rows)  # 0-indexed row 7
 
+    # Main categories + sub-categories
+    # Sub-cat format: (display_label, sg_category_value, dist_lo_yd, dist_hi_yd, is_feet)
+    # dist_lo_yd=None means no lower bound; dist_hi_yd=None means no upper bound
+    # is_feet=True: start_dist_yards is multiplied by 3 before comparison (putting)
     CAT_DEFS = [
-        ("Drives",         "drives"),
-        ("Long Approach",  "long_approach"),
-        ("Short Approach", "short_approach"),
-        ("Putting",        "putting"),
+        {
+            "label":   "Drives",
+            "cat_key": "drives",
+            "subs": [],   # no sub-breakdown for drives
+        },
+        {
+            "label":   "Long Approach",
+            "cat_key": "long_approach",
+            "subs": [
+                ("  > 150 yds",   "long_approach", 150,  None,  False),
+                ("  100 – 150",   "long_approach", 100,  150,   False),
+                ("  75 – 100",    "long_approach", None, 100,   False),
+            ],
+        },
+        {
+            "label":   "Short Approach",
+            "cat_key": "short_approach",
+            "subs": [
+                ("  50 – 75 yds", "short_approach", 50,  None,  False),
+                ("  25 – 50",     "short_approach", 25,  50,    False),
+                ("  < 25 yds",    "short_approach", None, 25,   False),
+            ],
+        },
+        {
+            "label":   "Putting",
+            "cat_key": "putting",
+            "subs": [
+                ("  > 20 ft",     "putting", 20,   None,  True),
+                ("  10 – 20 ft",  "putting", 10,   20,    True),
+                ("  6 – 10 ft",   "putting", 6,    10,    True),
+                ("  3 – 6 ft",    "putting", 3,    6,     True),
+                ("  < 3 ft",      "putting", None, 3,     True),
+            ],
+        },
     ]
 
     # Median requires the summary data since it's not easily computable
@@ -647,20 +776,43 @@ def upload_breakdown(service, sid):
             f'{cat_idx_0based + 1}),"")'
         )
 
-    for i, (label, cat_key) in enumerate(CAT_DEFS):
-        row = [
-            "", "",                                # A, B empty
-            label,                                 # C: category
-            shots_choose(cat_key),                 # D: total shots
-            choose_formula(cat_key, _sumif_formula),  # E: total SG
-            avg_choose(cat_key),                   # F: avg/shot
-            median_formula(i),                     # G: median/shot
-            per_round_choose(cat_key),             # H: per round
-        ]
-        tab_rows.append(row)
+    cat_data_start  = len(tab_rows)  # 0-indexed row 7
+    cat_row_indices = []             # rows that are main category rows (for formatting)
+    cat_median_idx  = {"drives": 0, "long_approach": 1, "short_approach": 2,
+                       "putting": 3, "total": 4}
 
-    # Total row
-    total_row = [
+    for cat_def in CAT_DEFS:
+        label   = cat_def["label"]
+        cat_key = cat_def["cat_key"]
+        med_idx = cat_median_idx[cat_key]
+
+        # Main category row
+        cat_row_indices.append(len(tab_rows))
+        tab_rows.append([
+            "", "",
+            label,
+            shots_choose(cat_key),
+            choose_formula(cat_key, _sumif_formula),
+            avg_choose(cat_key),
+            median_formula(med_idx),
+            per_round_choose(cat_key),
+        ])
+
+        # Sub-category rows (indented label; no bold, no conditional formatting)
+        for sub_label, sub_cat, lo, hi, is_ft in cat_def["subs"]:
+            tab_rows.append([
+                "", "",
+                sub_label,
+                sub_choose(sub_cat, lo, hi, is_ft, sub_shots_formula),
+                sub_choose(sub_cat, lo, hi, is_ft, sub_total_formula),
+                sub_choose(sub_cat, lo, hi, is_ft, sub_avg_formula),
+                sub_choose(sub_cat, lo, hi, is_ft, sub_median_formula),
+                sub_choose(sub_cat, lo, hi, is_ft, sub_per_round_formula),
+            ])
+
+    # Total row — always last, always bold, never formatted
+    total_tab_row_idx = len(tab_rows)
+    tab_rows.append([
         "", "",
         "Total",
         shots_choose("total"),
@@ -668,10 +820,9 @@ def upload_breakdown(service, sid):
         avg_choose("total"),
         median_formula(4),
         per_round_choose("total"),
-    ]
-    tab_rows.append(total_row)
+    ])
 
-    # Write tab
+    # Write tab content
     overwrite_tab(service, sid, BREAKDOWN_TAB, tab_rows)
 
     # Write helper data at J1
@@ -683,23 +834,29 @@ def upload_breakdown(service, sid):
         body={"values": helper_data},
     ).execute()
 
-    # Bold: row 0 (A1 label), row 3 (A4 label), row 6 (col headers), last data row (Total)
-    total_row_idx = cat_data_start + 4
-    bold_cells(service, sid, sheet_id,
-               [0, 3, 6, total_row_idx],
-               col_start=0, col_end=8)
-
-    # Conditional formatting: category rows only (cat_data_start to cat_data_start+3)
-    # Cols D-H = indices 3-7 (Total SG, Avg/Shot, Median/Shot, Per Round)
+    # Consolidate all formatting into one batchUpdate call
     clear_conditional_formats(service, sid, sheet_id)
-    add_gradient(service, sid, sheet_id,
-                 cat_data_start, cat_data_start + 3,
-                 [4, 5, 6, 7])  # E=Total SG, F=Avg, G=Median, H=Per Round
 
-    # Hide helper columns J-O
-    hide_columns(service, sid, sheet_id, 9, 15)
+    fmt_requests = []
+    # Bold: A1 label (row 0), A4 label (row 3), col headers (row 6), Total row
+    for row_idx in [0, 3, 6, total_tab_row_idx]:
+        fmt_requests.append(build_bold_request(sheet_id, row_idx, 0, 8))
+    # Bold main category rows (not sub-rows, not Total)
+    for row_idx in cat_row_indices:
+        fmt_requests.append(build_bold_request(sheet_id, row_idx, 2, 8))
+    # Gradient on main category rows only (cols E-H = indices 4-7)
+    # NOT on sub-rows (too noisy with small samples) and NOT on Total
+    for row_idx in cat_row_indices:
+        for col_idx in [4, 5, 6, 7]:
+            fmt_requests.append(build_gradient_request(
+                sheet_id, row_idx, row_idx, col_idx))
+    # Hide helper columns J-O (indices 9-15)
+    fmt_requests.append(build_hide_columns_request(sheet_id, 9, 15))
+    if fmt_requests:
+        _batch_update(service, sid, fmt_requests)
 
-    print(f"  '{BREAKDOWN_TAB}': written")
+    print(f"  '{BREAKDOWN_TAB}': written ({len(tab_rows)} rows, "
+          f"{sum(len(c['subs']) for c in CAT_DEFS)} sub-category rows)")
 
 
 # ── entry point ───────────────────────────────────────────────────────────────

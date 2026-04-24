@@ -264,24 +264,30 @@ def compute_sg(shots_csv: str, sg_shots_csv: str, sg_summary_csv: str,
         writer.writerows(deduped)
     print(f"Written: {sg_summary_csv}  ({len(deduped)} total round×profile rows)")
 
-    # Console summary for this run
+    # Console summary — one line per round, all four profiles
     def _fmt(v):
-        return f"{v:+.3f}" if isinstance(v, float) else str(v)
+        return f"{v:+.3f}" if isinstance(v, float) else "   —  "
 
-    for key in sorted(round_meta.keys()):
-        meta = round_meta[key]
-        v    = round_vals[key]
-        p    = meta["benchmark_profile"]
-        print(f"\n  ── {meta['round_date']} | {meta['course_name']} [{p}] ──")
-        print(f"  {'Category':<16}  {'Total':>7}  {'Shots':>5}  {'Mean/shot':>10}  {'Median/shot':>12}")
-        print(f"  {'-'*56}")
-        for label, sg_key in [("Drives","sg_drives"),("Long App","sg_long_approach"),
-                               ("Short App","sg_short_approach"),("Putting","sg_putting"),
-                               ("Total","sg_total")]:
-            vals   = v[sg_key.replace("sg_","")]
-            total  = round(sum(vals), 3) if vals else 0.0
-            print(f"  {label:<16}  {total:>+7.2f}  {len(vals):>5}  "
-                  f"{_fmt(_mean(vals)):>10}  {_fmt(_median(vals)):>12}")
+    # Group by round_id for compact display
+    from collections import defaultdict as _dd
+    by_round = _dd(dict)
+    for key, meta in round_meta.items():
+        rid = meta["round_id"]
+        p   = meta["benchmark_profile"]
+        by_round[rid]["date"]   = meta["round_date"]
+        by_round[rid]["course"] = meta["course_name"]
+        by_round[rid][p]        = round_vals[key]
+
+    for rid, info in by_round.items():
+        print(f"\n  {info['date']}  {info['course']}")
+        print(f"  {'Benchmark':<10}  {'Drives':>8}  {'Long App':>9}  {'Short App':>10}  {'Putting':>9}  {'Total':>8}")
+        print(f"  {'-'*62}")
+        for p in ["tour","scratch","10","bogey"]:
+            if p not in info: continue
+            v = info[p]
+            def sg(cat): return round(sum(v.get(cat,[])), 3)
+            print(f"  {p:<10}  {sg('drives'):>+8.2f}  {sg('long_approach'):>+9.2f}"
+                  f"  {sg('short_approach'):>+10.2f}  {sg('putting'):>+9.2f}  {sg('total'):>+8.2f}")
 
 
 def main(shots_csv=None, sg_shots_csv=None, sg_summary_csv=None, profile=None):
