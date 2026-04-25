@@ -662,9 +662,10 @@ def upload_breakdown(service, sid):
             "label":   "Short Approach",
             "cat_key": "short_approach",
             "subs": [
-                ("  50 – 75 yds","short_approach", 50,        None),
-                ("  25 – 50",    "short_approach", 25,        50),
-                ("  < 25 yds",   "short_approach", None,      25),
+                ("  75 – 100 yds","short_approach", 75,        None),
+                ("  50 – 75",     "short_approach", 50,        75),
+                ("  25 – 50",     "short_approach", 25,        50),
+                ("  < 25 yds",    "short_approach", None,      25),
             ],
         },
         {
