@@ -14,7 +14,7 @@ GARMIN_PASSWORD = os.environ.get("GARMIN_PASSWORD", "yourpassword")
 # Shots STARTING from farther than this distance are "long approaches / drives".
 # Shots STARTING from within this distance (but not on the green) are "short
 # approaches / chips / around the green".
-SHORT_APPROACH_THRESHOLD_YARDS = 75   # ← tune this to your liking
+SHORT_APPROACH_THRESHOLD_YARDS = 100  # ← tune this to your liking
 
 # Exclude shots where SG calculates to exactly 0.0.
 # Zero-SG almost always means bad/missing GPS data (start == end distance),
