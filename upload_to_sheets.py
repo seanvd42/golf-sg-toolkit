@@ -320,7 +320,7 @@ def upload_strokes_gained(service, sid):
             total_sg  = ff(r.get(key))
             avg       = ff(r.get(f"{key}_mean_per_shot"))
             median    = ff(r.get(f"{key}_median_per_shot"))
-            per_round = total_sg   # per round = total SG (only 1 round per block)            output.append([label, shots_all, total_sg, avg, median])
+            output.append([label, shots_all, total_sg, avg, median])
 
         fmt_ranges.append((cat_start, len(output) - 1))
 
@@ -618,23 +618,19 @@ def upload_breakdown(service, sid):
     BLANK = ["", "", "", "", "", "", ""]
 
     tab_rows = [
-        # Row 1: col headers start at C1; filters in A1/A2
+        # Row 1: filter A1=label B1=value | C1-G1=col headers
         ["Last X Rounds", 0,
          "Category", "Total Shots", "Total SG",
-         "Avg / Shot", "Median / Shot"],  # row 1
-        # Row 2: blank in C+; A2 is filter value label
+         "Avg / Shot", "Median / Shot"],   # 7 cols
+        # Row 2: filter A2=label B2=value | C2-G2=empty
         ["Benchmark", PROFILE_DISPLAY["tour"],
-         "", "", "", "", "", ""],                       # row 2
+         "", "", "", "", ""],               # 7 cols
     ]
-    # Note to user: A1=Last X Rounds label, B1=value (edit this)
-    #               A2=Benchmark label,     B2=value (edit this)
+    # B1 = Last X Rounds value (edit this; 0 = all)
+    # B2 = Benchmark value (edit this: Tour / Scratch / 10 Handicap / Bogey)
 
-    # Note: we now have 8 columns (A-H) since category is C and data is D-H
-    # Adjust BLANK
-    BLANK8 = [""] * 8
-
-    # Fix previous rows to 8 cols
-    tab_rows = [r + [""] * (7 - len(r)) for r in tab_rows]
+    # All rows are 7 columns: A B | C D E F G
+    tab_rows = [r[:7] + [""] * max(0, 7 - len(r)) for r in tab_rows]
 
     cat_data_start = len(tab_rows)  # 0-indexed — table starts at row 1 (C1)
 
