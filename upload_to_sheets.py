@@ -464,10 +464,9 @@ def upload_breakdown(service, sid):
                 f'ROUNDUP(SUMPRODUCT(({cat_range}="{cat_value}")*1)/$B$1*($B$1>0),0)),"")))'
             )
         return (
-            f'=IFERROR(SUMPRODUCT({cat_match}*{rank_filter}*'
-            f'ISNUMBER({sg_range})*1),"")'
+            f'=IFERROR(ROUND(SUMPRODUCT({cat_match}*{rank_filter}*'
+            f'IFERROR({sg_range}*1,0)),3),"")'
         )
-
     def _sumif_num(cat_value, sg_col_letter):
         """Like _sumif_formula but returns 0 on error — safe to use inside division."""
         sg_range   = f"{SD}!{sg_col_letter}2:{sg_col_letter}{n+1}"
