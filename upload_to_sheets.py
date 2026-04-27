@@ -541,6 +541,33 @@ def upload_breakdown(service, sid):
         labels_str = '","'.join(PROFILE_LABELS_LIST)
         return f'=IFERROR(CHOOSE(MATCH($B$2,{{"{labels_str}"}},0),{",".join(parts)}),"")'
 
+    def _shots_formula(cat_value):
+        """Count shots with valid SG (non-empty sg_tour) matching category + rank filter.
+        Shot count doesn't depend on benchmark — sg_tour being non-empty just means
+        the shot was categorised and has GPS data."""
+        sg_range   = f"{SD}!{col.get('sg_tour','Q')}2:{col.get('sg_tour','Q')}{n+1}"
+        cat_range  = f"{SD}!{cat_col}2:{cat_col}{n+1}"
+        date_range = f"{SD}!{date_col}2:{date_col}{n+1}"
+
+        if cat_value == "total":
+            cat_match   = f'(ISNUMBER({sg_range}))'
+            rank_filter = (
+                f'(($B$1=0)+($B$1>0)*({date_range}>= '
+                f'IFERROR(LARGE(IF(ISNUMBER({sg_range}),{date_range}),'
+                f'SUMPRODUCT((1/COUNTIF({date_range},{date_range}))*($B$1>0)*(ISNUMBER({sg_range})*1))),"")))'
+            )
+        else:
+            cat_match   = f'({cat_range}="{cat_value}")'
+            rank_filter = (
+                f'(($B$1=0)+($B$1>0)*({date_range}>= '
+                f'IFERROR(LARGE(IF({cat_range}="{cat_value}",{date_range}),'
+                f'ROUNDUP(SUMPRODUCT(({cat_range}="{cat_value}")*1)/$B$1*($B$1>0),0)),"")))'
+            )
+        return (
+            f'=IFERROR(SUMPRODUCT({cat_match}*{rank_filter}*'
+            f'ISNUMBER({sg_range})*1),"")'
+        )
+
     def shots_choose(cat_value):
         return _shots_formula(cat_value)
 
@@ -553,14 +580,14 @@ def upload_breakdown(service, sid):
         return f'=IFERROR(ROUND(({numerator})/({shots_f}),3),"")'
 
     def median_formula(cat_idx_0based):
-        """VLOOKUP into helper block at J2:O5."""
+        """INDEX into helper block at J2:O5 (profiles × categories)."""
         return (
             f'=IFERROR(INDEX(K2:O5,'
             f'MATCH($B$2,J2:J5,0),'
             f'{cat_idx_0based + 1}),"")'
         )
 
-        # ── Sub-category formula builders ────────────────────────────────────────
+    # ── Sub-category formula builders ────────────────────────────────────────
     dist_col = col.get("start_dist_yards", "L")
 
     def _dist_filter(dist_lo, dist_hi, cat_val):
@@ -723,19 +750,6 @@ def upload_breakdown(service, sid):
             row.append(weighted_median(p, ck))
         helper_data.append(row)
 
-    def median_formula(cat_idx_0based):
-        """
-        VLOOKUP into helper block at J:N.
-        J col = col 9 (0-indexed); data cols K-O = cat indices 1-5.
-        """
-        # MATCH(B2, J2:J5, 0) gives row offset; INDEX picks the right cat col
-        # Helper range: J2:O5 (profiles=rows, categories=cols)
-        # cat_idx_0based: 0=drives,1=long,2=short,3=putting,4=total
-        return (
-            f'=IFERROR(INDEX(K2:O5,'
-            f'MATCH($B$2,J2:J5,0),'
-            f'{cat_idx_0based + 1}),"")'
-        )
 
     cat_data_start  = len(tab_rows)  # 0-indexed row 7
     cat_row_indices = []             # rows that are main category rows (for formatting)
